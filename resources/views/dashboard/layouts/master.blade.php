@@ -141,13 +141,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link {{request()->is('/') ? ' active' : ''}}" href="{{route('home')}}">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Home</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/documentation/documentation.html">
+            <a class="nav-link {{request()->is('/module/create') ? ' active' : ''}}" href="{{route('module.create')}}">
               <i class="ti-write menu-icon"></i>
               <span class="menu-title">Buat Modul</span>
             </a>
