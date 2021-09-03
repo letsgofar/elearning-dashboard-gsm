@@ -193,9 +193,9 @@
             </a>
             <div class="collapse" id="form-elements">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="">Spesial</a></li>
-                <li class="nav-item"><a class="nav-link" href="">Level Basic</a></li>
-                <li class="nav-item"><a class="nav-link" href="">Level Advanced</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/module/special') ? ' active' : ''}}" href="{{route('module.special')}}">Spesial</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/module/basic') ? ' active' : ''}}" href="{{route('module.basic')}}">Level Basic</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/module/advanced') ? ' active' : ''}}" href="{{route('module.advanced')}}">Level Advanced</a></li>
               </ul>
             </div>
           </li>

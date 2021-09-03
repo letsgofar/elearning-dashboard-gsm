@@ -22,6 +22,23 @@ class ModuleController extends Controller
         //
     }
 
+    public function indexspecial()
+    {
+        $special = Module::where('level_id', 1)->paginate(5);
+        return view('dashboard.module.modulespecial', ['specials' => $special]);
+    }
+
+    public function indexbasic()
+    {
+        $basic = Module::where('level_id', 2)->paginate(5);
+        return view('dashboard.module.modulebasic', ['basics' => $basic]);
+    }
+    public function indexadvanced()
+    {
+        $advanced = Module::where('level_id', 3)->paginate(5);
+        return view('dashboard.module.moduleadvanced', ['advanceds' => $advanced]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -33,7 +50,7 @@ class ModuleController extends Controller
         $levels = Level::get();
         $grades = Grade::get();
 
-        return view('dashboard.modul.create', [
+        return view('dashboard.module.create', [
             'categories' => $categories,
             'levels' => $levels,
             'grades' => $grades
