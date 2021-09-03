@@ -172,30 +172,30 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="ti-blackboard menu-icon"></i>
-              <span class="menu-title">List Sekolah</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Sekolah Model</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Sekolah e-Model</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Sekolah Jejaring</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Sekolah Indonesia</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="ti-book menu-icon"></i>
               <span class="menu-title">List Modul</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="form-elements">
+            <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link {{request()->is('/module/special') ? ' active' : ''}}" href="{{route('module.special')}}">Spesial</a></li>
-                <li class="nav-item"><a class="nav-link {{request()->is('/module/basic') ? ' active' : ''}}" href="{{route('module.basic')}}">Level Basic</a></li>
-                <li class="nav-item"><a class="nav-link {{request()->is('/module/advanced') ? ' active' : ''}}" href="{{route('module.advanced')}}">Level Advanced</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/module/special') ? ' active' : ''}}" href="{{route('module.special')}}" href="">Modul Spesial</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/module/basic') ? ' active' : ''}}" href="{{route('module.basic')}}">Modul Basic</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/module/advanced') ? ' active' : ''}}" href="{{route('module.advanced')}}">Modul Advanced</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+              <i class="ti-blackboard menu-icon"></i>
+              <span class="menu-title">List Sekolah</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Sekolah Model</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Sekolah e-Model</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Sekolah Jejaring</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Sekolah Indonesia</a></li>
               </ul>
             </div>
           </li>

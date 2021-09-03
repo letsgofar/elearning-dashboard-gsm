@@ -24,18 +24,18 @@ class ModuleController extends Controller
 
     public function indexspecial()
     {
-        $special = Module::where('level_id', 1)->paginate(5);
+        $special = Module::where('level_id', 1)->latest()->paginate(5);
         return view('dashboard.module.modulespecial', ['specials' => $special]);
     }
 
     public function indexbasic()
     {
-        $basic = Module::where('level_id', 2)->paginate(5);
+        $basic = Module::where('level_id', 2)->latest()->paginate(5);
         return view('dashboard.module.modulebasic', ['basics' => $basic]);
     }
     public function indexadvanced()
     {
-        $advanced = Module::where('level_id', 3)->paginate(5);
+        $advanced = Module::where('level_id', 3)->latest()->paginate(5);
         return view('dashboard.module.moduleadvanced', ['advanceds' => $advanced]);
     }
 
@@ -110,6 +110,45 @@ class ModuleController extends Controller
         //
     }
 
+    public function editspecial(Module $modules)
+    {
+        $categories = Category::get();
+        $levels = Level::get();
+        $grades = Grade::get();
+        return view('dashboard.module.editmodulspecial', [
+            'modules' => $modules,
+            'categories' => $categories,
+            'levels' => $levels,
+            'grades' => $grades,
+        ]);
+    }
+
+    public function editbasic(Module $modules)
+    {
+        $categories = Category::get();
+        $levels = Level::get();
+        $grades = Grade::get();
+        return view('dashboard.module.editmodulbasic', [
+            'modules' => $modules,
+            'categories' => $categories,
+            'levels' => $levels,
+            'grades' => $grades,
+        ]);
+    }
+
+    public function editadvanced(Module $modules)
+    {
+        $categories = Category::get();
+        $levels = Level::get();
+        $grades = Grade::get();
+        return view('dashboard.module.editmoduladvanced', [
+            'modules' => $modules,
+            'categories' => $categories,
+            'levels' => $levels,
+            'grades' => $grades,
+        ]);
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -120,6 +159,84 @@ class ModuleController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function updatespecial(Request $request, Module $modules)
+    {
+        $attr = $request->validate([
+            'category' => 'required',
+            'level' => 'required',
+            'grade' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'challenge' => 'required',
+            'url_video' => 'required',
+            'url_image' => 'required',
+            'url_document' => 'required',
+        ]);
+
+        $slug = Str::slug($request->title);
+        $attr['slug'] = $slug;
+
+        $attr['category_id'] = request('category');
+        $attr['level_id'] = request('level');
+        $attr['grade_id'] = request('grade');
+
+        $modules->update($attr);
+
+        return redirect()->to('/module/special');
+    }
+
+    public function updatebasic(Request $request, Module $modules)
+    {
+        $attr = $request->validate([
+            'category' => 'required',
+            'level' => 'required',
+            'grade' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'challenge' => 'required',
+            'url_video' => 'required',
+            'url_image' => 'required',
+            'url_document' => 'required',
+        ]);
+
+        $slug = Str::slug($request->title);
+        $attr['slug'] = $slug;
+
+        $attr['category_id'] = request('category');
+        $attr['level_id'] = request('level');
+        $attr['grade_id'] = request('grade');
+
+        $modules->update($attr);
+
+        return redirect()->to('/module/basic');
+    }
+
+    public function updateadvanced(Request $request, Module $modules)
+    {
+        $attr = $request->validate([
+            'category' => 'required',
+            'level' => 'required',
+            'grade' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'challenge' => 'required',
+            'url_video' => 'required',
+            'url_image' => 'required',
+            'url_document' => 'required',
+        ]);
+
+        $slug = Str::slug($request->title);
+        $attr['slug'] = $slug;
+
+        $attr['category_id'] = request('category');
+        $attr['level_id'] = request('level');
+        $attr['grade_id'] = request('grade');
+
+        $modules->update($attr);
+
+        return redirect()->to('/module/advanced');
     }
 
     /**
