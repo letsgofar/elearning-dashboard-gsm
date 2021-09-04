@@ -192,10 +192,10 @@
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Sekolah Model</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Sekolah e-Model</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Sekolah Jejaring</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Sekolah Indonesia</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/sekolah/model') ? ' active' : ''}}" href="{{route('sekolah.model')}}">Sekolah Model</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/sekolah/emodel') ? ' active' : ''}}" href="{{route('sekolah.emodel')}}">Sekolah e-Model</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/sekolah/jejaring') ? ' active' : ''}}" href="{{route('sekolah.jejaring')}}">Sekolah Jejaring</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/sekolah/indonesia') ? ' active' : ''}}" href="{{route('sekolah.indonesia')}}">Sekolah Indonesia</a></li>
               </ul>
             </div>
           </li>
