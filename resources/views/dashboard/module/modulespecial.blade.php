@@ -42,7 +42,9 @@
                         <div class="text-center">
                           <a href="" type="button" class="btn btn-info btn-sm">Detail</a>
                           <a href="/module/special/{{$special->slug}}/edit" type="button" class="btn btn-warning btn-sm">Edit</a>
-                          <form class="d-inline" action="" method="POST">
+                          <form class="d-inline" action="/module/special/{{$special->slug}}/delete" method="POST">
+                            @method('delete')
+                            @csrf
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                           </form>
                         </div>
@@ -60,5 +62,4 @@
         </div>
       </div>
     </div>
-    
 @endsection

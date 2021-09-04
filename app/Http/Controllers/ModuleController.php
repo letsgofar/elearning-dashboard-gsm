@@ -249,4 +249,22 @@ class ModuleController extends Controller
     {
         //
     }
+
+    public function destroyspecial(Module $modules)
+    {
+        $modules->delete();
+        return redirect()->to('/module/special');
+    }
+
+    public function destroybasic(Module $modules)
+    {
+        $modules->delete();
+        return redirect()->to('/module/basic');
+    }
+
+    public function destroyadvanced(Module $modules)
+    {
+        $modules->delete();
+        return redirect()->to('/module/advanced');
+    }
 }

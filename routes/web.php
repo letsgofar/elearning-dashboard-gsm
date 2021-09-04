@@ -12,9 +12,12 @@ Route::get('/module/advanced', 'ModuleController@indexadvanced')->name('module.a
 
 Route::get('/module/special/{modules:slug}/edit', 'ModuleController@editspecial')->name('module.special.edit');
 Route::patch('/module/special/{modules:slug}/edit', 'ModuleController@updatespecial')->name('module.special.edit');
+Route::delete('/module/special/{modules:slug}/delete', 'ModuleController@destroyspecial')->name('module.special.delete');
 
 Route::get('/module/basic/{modules:slug}/edit', 'ModuleController@editbasic')->name('module.basic.edit');
 Route::patch('/module/basic/{modules:slug}/edit', 'ModuleController@updatebasic')->name('module.basic.edit');
+Route::delete('/module/basic/{modules:slug}/delete', 'ModuleController@destroybasic')->name('module.basic.delete');
 
 Route::get('/module/advanced/{modules:slug}/edit', 'ModuleController@editadvanced')->name('module.advanced.edit');
 Route::patch('/module/advanced/{modules:slug}/edit', 'ModuleController@updateadvanced')->name('module.advanced.edit');
+Route::delete('/module/advanced/{modules:slug}/delete', 'ModuleController@destroyadvanced')->name('module.advanced.delete');
