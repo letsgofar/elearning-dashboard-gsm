@@ -165,7 +165,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/documentation/documentation.html">
+            <a class="nav-link" href="/user/listuser">
               <i class="ti-user menu-icon"></i>
               <span class="menu-title">List User</span>
             </a>

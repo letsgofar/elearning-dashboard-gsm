@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LevelsTableSeeder::class);
         $this->call(LabelsTableSeeder::class);
         $this->call(StatusesTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
     }
 }

@@ -24,6 +24,8 @@ Route::patch('/module/advanced/{modules:slug}/edit', 'ModuleController@updateadv
 Route::delete('/module/advanced/{modules:slug}/delete', 'ModuleController@destroyadvanced')->name('module.advanced.delete');
 // ******END ROUTE FOR MODULE******* //
 
+
+
 // ******ROUTE FOR SCHOOL******* //
 Route::get('/sekolah/model', 'SchoolController@indexmodel')->name('sekolah.model');
 Route::get('/sekolah/emodel', 'SchoolController@indexemodel')->name('sekolah.emodel');
@@ -34,3 +36,9 @@ Route::get('sekolah/model/{schools:slug}', 'SchoolController@showsekolahmodel')-
 Route::get('sekolah/emodel/{schools:slug}', 'SchoolController@showsekolahmodel')->name('sekolah.model.detail');
 Route::get('sekolah/jejaring/{schools:slug}', 'SchoolController@showsekolahjejaring')->name('sekolah.jejaring.detail');
 Route::get('sekolah/indonesia/{schools:slug}', 'SchoolController@showsekolahindonesia')->name('sekolah.indonesia.detail');
+// ******END ROUTE FOR SCHOOL******* //
+
+
+
+// ******ROUTE FOR USER******* //
+Route::get('/user/listuser', 'UserController@index')->name('user.listuser');

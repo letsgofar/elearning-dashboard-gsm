@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\School;
 use App\User;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,16 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $sekolahmodel = School::where('label_id', 1)->count();
-        $sekolahjejaring = School::where('label_id', 3)->count();
-        $mentor = User::where('role_id', 2)->count();
-        $guru = User::where('role_id', 3)->count();
-        return view('dashboard.index', [
-            'model' => $sekolahmodel,
-            'jejaring' => $sekolahjejaring,
-            'mentor' => $mentor,
-            'guru' => $guru,
-        ]);
+        $users = User::latest()->paginate(10);
+        return view('dashboard.user.listuser', ['users' => $users]);
     }
 
     /**
