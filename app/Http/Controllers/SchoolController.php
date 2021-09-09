@@ -68,9 +68,26 @@ class SchoolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
+    }
+
+    public function showsekolahmodel(School $schools)
+    {
+        return view('dashboard.school.sekolahmodeldetail', ['schools' => $schools]);
+    }
+    public function showsekolahemodel(School $schools)
+    {
+        return view('dashboard.school.sekolahemodeldetail', ['schools' => $schools]);
+    }
+    public function showsekolahjejaring(School $schools)
+    {
+        return view('dashboard.school.sekolahjejaringdetail', ['schools' => $schools]);
+    }
+    public function showsekolahindonesia(School $schools)
+    {
+        return view('dashboard.school.sekolahindonesiadetail', ['schools' => $schools]);
     }
 
     /**

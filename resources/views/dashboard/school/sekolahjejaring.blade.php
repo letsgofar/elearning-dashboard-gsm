@@ -46,8 +46,7 @@
                       </td>
                       <td>
                         <div class="text-center">
-                        <a href="" type="button" class="btn btn-info btn-sm">Detail</a>
-                        <a type="button" class="btn btn-warning btn-sm">Label</a>
+                        <a href="/sekolah/jejaring/{{$jejaring->slug}}" type="button" class="btn btn-info btn-sm">Detail</a>
                         </div>
                       </td>
                     </tr>

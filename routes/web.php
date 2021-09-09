@@ -29,3 +29,8 @@ Route::get('/sekolah/model', 'SchoolController@indexmodel')->name('sekolah.model
 Route::get('/sekolah/emodel', 'SchoolController@indexemodel')->name('sekolah.emodel');
 Route::get('/sekolah/jejaring', 'SchoolController@indexjejaring')->name('sekolah.jejaring');
 Route::get('/sekolah/indonesia', 'SchoolController@indexindonesia')->name('sekolah.indonesia');
+
+Route::get('sekolah/model/{schools:slug}', 'SchoolController@showsekolahmodel')->name('sekolah.model.detail');
+Route::get('sekolah/emodel/{schools:slug}', 'SchoolController@showsekolahmodel')->name('sekolah.model.detail');
+Route::get('sekolah/jejaring/{schools:slug}', 'SchoolController@showsekolahjejaring')->name('sekolah.jejaring.detail');
+Route::get('sekolah/indonesia/{schools:slug}', 'SchoolController@showsekolahindonesia')->name('sekolah.indonesia.detail');
