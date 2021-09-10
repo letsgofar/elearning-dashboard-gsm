@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class CouponController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::latest()->paginate(10);
-        return view('dashboard.user.listuser', ['users' => $users]);
+        return view('dashboard.kupon.index');
     }
 
     /**
@@ -25,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.kupon.create');
     }
 
     /**
@@ -45,9 +43,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $users)
+    public function show($id)
     {
-        return view('dashboard.user.userdetail', ['users' => $users]);
+        //
     }
 
     /**

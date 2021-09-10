@@ -52,7 +52,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 mb-lg-0 stretch-card transparent">
+            <div class="col-md-6 mb-4 stretch-card transparent">
               <div class="card card-light-blue">
                 <div class="card-body">
                   <p class="mb-4 font-weight-bold">Mentor</p>
@@ -61,7 +61,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 mb-lg-0 stretch-card transparent">
+            <div class="col-md-6 mb-4 stretch-card transparent">
               <div class="card card-light-danger">
                 <div class="card-body">
                   <p class="mb-4 font-weight-bold">Guru</p>
@@ -84,7 +84,7 @@
                         <div class="ml-xl-4 mt-3">
                         <p class="card-title">Peta Sekolah GSM</p>
                         <iframe class="" style="width: 100%; width:100vw; margin-right:20px" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31628.036762503445!2d110.36018364165041!3d-7.736177387458326!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa7b1c10be1c88d90!2sGerakan%20Sekolah%20Menyenangkan!5e0!3m2!1sen!2sid!4v1623210534186!5m2!1sen!2sid" height="450" style="" frameBorder=0 allowfullscreen="" loading="lazy"></iframe>
-                        </div>  
+                        </div>
                         </div>
                     </div>
                   </div>

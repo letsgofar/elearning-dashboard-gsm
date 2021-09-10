@@ -42,3 +42,11 @@ Route::get('sekolah/indonesia/{schools:slug}', 'SchoolController@showsekolahindo
 
 // ******ROUTE FOR USER******* //
 Route::get('/user/listuser', 'UserController@index')->name('user.listuser');
+Route::get('/user/{users:slug}', 'UserController@show')->name('user.detailuser');
+// ******END ROUTE FOR USER******* //
+
+
+
+// ******ROUTE FOR KUPON******* //
+Route::get('/kupon/all-kupon', 'CouponController@index')->name('listkupon');
+Route::get('/kupon/buat-kupon', 'CouponController@create')->name('kupon.create');

@@ -12,6 +12,7 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+
     use Notifiable;
 
     /**
@@ -20,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role_id', 'jabatan', 'sekolah', 'kabupaten'
+        'name', 'slug', 'email', 'password', 'role_id', 'jabatan', 'sekolah', 'kabupaten'
     ];
 
     /**

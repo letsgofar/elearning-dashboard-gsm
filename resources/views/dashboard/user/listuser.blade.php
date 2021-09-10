@@ -46,7 +46,7 @@
                       </td>
                       <td>
                         <div class="text-center">
-                        <a href="" type="button" class="btn btn-info btn-sm">Detail</a>
+                        <a href="/user/{{$user->slug}}" type="button" class="btn btn-info btn-sm">Detail</a>
                         </div>
                       </td>
                     </tr>
@@ -64,5 +64,5 @@
         </div>
       </div>
     </div>
-    
+
 @endsection

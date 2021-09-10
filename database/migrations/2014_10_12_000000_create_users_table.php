@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->foreignId('role_id');
             $table->string('name');
+            $table->string('slug');
             $table->string('jabatan')->nullable();
             $table->string('sekolah')->nullable();
             $table->text('kabupaten')->nullable();

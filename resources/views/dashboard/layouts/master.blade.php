@@ -159,7 +159,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/documentation/documentation.html">
+            <a class="nav-link" href="{{route('kupon.create')}}">
               <i class="ti-credit-card menu-icon"></i>
               <span class="menu-title">Buat Kupon Perubahan</span>
             </a>
@@ -277,6 +277,37 @@
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            const linkLi = $( ".nav-item" );
+            const linkAnchor = $( ".nav-item a" ); // anchor is require to prevent for not to direct
+            linkAnchor.bind( "click", function(event) {
+                var clickedItem = $( this ).parent("li:first");
+                linkLi.each( function() {
+                    $( this ).removeClass( "active" );
+                });
+                clickedItem.addClass( "active" );
+            });
+        $( ".nav-item a[href$='"+window.location.pathname+"']" ).parent("li:first").addClass("active");
+        });
+    </script>
+    <script>
+            jQuery(function($) {
+            var path = window.location.href;
+            $('ul a').each(function() {
+                if (this.href === path) {
+                    $(this).addClass('sub-menu active');
+                    $( this ).parent().parent().closest("li").addClass('active2');
+                    $('.active2 a:first').addClass('active'); //add the active class to the parent node
+                }
+            });
+            });
+    </script>
+<!-- End custom js for this page-->
+
+    @yield('js')
+
 </body>
 
 </html>
