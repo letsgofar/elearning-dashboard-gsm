@@ -17,16 +17,17 @@
   <link rel="stylesheet" type="text/css" href="{{asset('assets/js/select.dataTables.min.css')}}">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="{{asset('assets/css/vertical-layout-light/style.css')}}">
+  <link rel="stylesheet" href="{{asset('/assets/css/vertical-layout-light/style.css')}}">
+  <link rel="stylesheet" href="{{asset('/assets/css/vertical-layout-light/chardinjs.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
 </head>
-<body>
+<body data-chardin-sequenced="true" data-chardin-auto="false" data-chardin-delay="800">
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{{asset('assets/images/main-icon.png')}}" class="mr-2" alt="logo"/></a>
+    <nav id="top-nav" class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div id="logoweb" class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" data-intro="Selamat datang di website Dashboard Admin GSM, Yuk kita tur dulu!" data-position="bottom" >
+        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{{asset('assets/images/main-icon2.png')}}" class="mr-2" alt="logo"/></a>
         <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('assets/images/small-icon.png')}}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -94,7 +95,7 @@
               </a>
             </div>
           </li>
-          <li class="nav-item nav-profile dropdown">
+          <li id="profilUser" class="nav-item nav-profile dropdown" data-intro="Gunakan untuk logout dari Web" data-position="bottom">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
               <img src="{{asset('assets/images/faces/face28.jpg')}}" alt="profile"/>
             </a>
@@ -115,21 +116,20 @@
         </button>
       </div>
     </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
+	<!-- partial -->
+	<div class="container-fluid page-body-wrapper"  style="z-index:auto;">
       <!-- partial:partials/_settings-panel.html -->
       <div class="theme-setting-wrapper">
-        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="settings-trigger"><i id="settings-trigger-i" class="ti-settings"></i></div>
+		<div data-toggle="chardinjs" id="support-trigger" class="start-support" href="#"><i id="support-trigger-i" class="ti-help"></i></div>
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close ti-close"></i>
           <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
           <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
           <p class="settings-heading mt-2">HEADER SKINS</p>
           <div class="color-tiles mx-0 px-4">
             <div class="tiles success"></div>
-            <div class="tiles warning"></div>
-            <div class="tiles danger"></div>
             <div class="tiles info"></div>
             <div class="tiles dark"></div>
             <div class="tiles default"></div>
@@ -138,7 +138,7 @@
       </div>
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav style="z-index:1000;" class="sidebar sidebar-offcanvas" id="sidebar" data-intro="Menu berupa kumpulan kegiatan yang bisa Admin lakukan ~" data-position="right" >
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link {{request()->is('/') ? ' active' : ''}}" href="{{route('home')}}">
@@ -178,7 +178,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link {{request()->is('/module/special') ? ' active' : ''}}" href="{{route('module.special')}}" href="">Modul Spesial</a></li>
+                <li class="nav-item"><a class="nav-link {{request()->is('/module/special') ? ' active' : ''}}" href="{{route('module.special')}}">Modul Spesial</a></li>
                 <li class="nav-item"><a class="nav-link {{request()->is('/module/basic') ? ' active' : ''}}" href="{{route('module.basic')}}">Modul Basic</a></li>
                 <li class="nav-item"><a class="nav-link {{request()->is('/module/advanced') ? ' active' : ''}}" href="{{route('module.advanced')}}">Modul Advanced</a></li>
               </ul>
@@ -207,8 +207,8 @@
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Raport User</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Raport Sekolah</a></li>
+               <li class="nav-item"> <a class="nav-link" href="{{url('/raport/raportuser')}}">Raport User</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/raport/raportsekolah')}}">Raport Sekolah</a></li>
               </ul>
             </div>
           </li>
@@ -220,8 +220,8 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Mentor</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Sekolah Model</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{{url('/request/permintaanmentor')}}">Mentor</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/request/permintaansekolah')}}">Sekolah Model</a></li>
               </ul>
             </div>
           </li>
@@ -248,7 +248,8 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <!-- plugins:js -->
   <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->
@@ -268,10 +269,10 @@
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="{{asset('assets/js/dashboard.js')}}"></script>
+  <script src="{{asset('/assets/js/webguide.js')}}"></script>
+  <script src="{{asset('/assets/js/chardinjs.min.js')}}"></script>
   <script src="{{asset('assets/js/Chart.roundedBarCharts.js')}}"></script>
   <!-- End custom js for this page-->
-
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   <!-- Optional JavaScript; choose one of the two! -->
 
