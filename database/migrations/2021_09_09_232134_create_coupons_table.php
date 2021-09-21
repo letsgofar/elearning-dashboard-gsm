@@ -15,6 +15,11 @@ class CreateCouponsTable extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('slug');
+            $table->string('code');
+            $table->string('kuota')->nullable();
+            $table->date('date', 8)->nullable();
             $table->timestamps();
         });
     }

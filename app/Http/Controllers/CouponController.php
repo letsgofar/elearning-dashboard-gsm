@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Coupon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CouponController extends Controller
 {
@@ -13,7 +15,8 @@ class CouponController extends Controller
      */
     public function index()
     {
-        return view('dashboard.kupon.index');
+        $coupons = Coupon::orderBy('created_at', 'DESC')->Paginate(3);;
+        return view('dashboard.kupon.index', ['coupons' => $coupons]);
     }
 
     /**
@@ -34,7 +37,16 @@ class CouponController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $createkupon = new Coupon;
+
+        $createkupon->code = $request->code;
+        $createkupon->nama = $request->nama;
+        $createkupon->kuota = $request->kuota;
+        $createkupon->date = $request->date;
+        $createkupon->slug = Str::slug($request->nama);
+
+        $createkupon->save();
+        return redirect('/kupon/buat-kupon');
     }
 
     /**

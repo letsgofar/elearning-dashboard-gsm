@@ -16,15 +16,15 @@
               <p class="card-description">
                 Admin bisa membuat kupon dengan mengisi form berikut
               </p>
-              <form class="forms-sample" name="add_kupon_form" id="add_kupon_form" method="POST" action="/kupon/createkupon">
+              <form class="forms-sample" name="add_kupon_form" id="add_kupon_form" method="POST" action="/kupon/buat-kupon">
                 @csrf
                 <div class="form-group">
                   <label for="">Nama Kupon</label>
-                  <input type="text" class="form-control" id="coupon_title" name="nama_kupon" placeholder="Nama Kupon" required>
+                  <input type="text" class="form-control" id="coupon_title" name="nama" placeholder="Nama Kupon" required>
                 </div>
                 <div class="form-group">
                     <label for="">Kode Kupon</label>
-                    <input type="text" class="form-control" id="coupon_code" name="kode_kupon" placeholder="Kode Kupon" required>
+                    <input type="text" class="form-control" id="coupon_code" name="code" placeholder="Kode Kupon" required>
                   </div>
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Kategori Kupon</label>
@@ -51,13 +51,13 @@
                       <div class="col-sm-4">
                         <div class="form-group" id="rangeDate" style="display:none;">
                           <label for="">Date</label>
-                              <input type="date" class="form-control" name="expired" placeholder="dd-mm-yyyy">
+                              <input type="date" class="form-control" name="date" placeholder="dd-mm-yyyy">
                         </div>
                       </div>
                       <div class="col-sm-5">
                         <div class="form-group" id="kuotaView" style="display:none;">
                             <label for="">Kuota</label>
-                                <input type="text" class="form-control" name="kuota_kupon" placeholder="Masukkan Kuota">
+                                <input type="text" class="form-control" name="kuota" placeholder="Masukkan Kuota">
                         </div>
                     </div>
                   </div>

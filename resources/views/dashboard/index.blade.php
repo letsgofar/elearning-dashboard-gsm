@@ -26,7 +26,7 @@
         <div class="col-md-6 grid-margin stretch-card">
           <div class="card tale-bg">
             <div class="card-people mt-auto mb-auto ml-auto mr-auto" style="padding:0;">
-              <img class="img-responsive" src="{{asset('assets/images/dashboard/people.png')}}" alt="people">
+              {{-- <img class="img-responsive" src="{{asset('assets/images/dashboard/people.png')}}" alt="people"> --}}
             </div>
           </div>
         </div>

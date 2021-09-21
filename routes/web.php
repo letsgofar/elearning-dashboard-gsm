@@ -50,3 +50,4 @@ Route::get('/user/{users:slug}', 'UserController@show')->name('user.detailuser')
 // ******ROUTE FOR KUPON******* //
 Route::get('/kupon/all-kupon', 'CouponController@index')->name('listkupon');
 Route::get('/kupon/buat-kupon', 'CouponController@create')->name('kupon.create');
+Route::post('/kupon/buat-kupon', 'CouponController@store')->name('kupon.store');

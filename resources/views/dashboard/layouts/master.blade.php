@@ -27,7 +27,7 @@
     <!-- partial:partials/_navbar.html -->
     <nav id="top-nav" class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div id="logoweb" class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" data-intro="Selamat datang di website Dashboard Admin GSM, Yuk kita tur dulu!" data-position="bottom" >
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{{asset('assets/images/main-icon2.png')}}" class="mr-2" alt="logo"/></a>
+        {{-- <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{{asset('assets/images/main-icon2.png')}}" class="mr-2" alt="logo"/></a> --}}
         <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('assets/images/small-icon.png')}}" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -226,7 +226,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="/kupon/all-kupon">
               <i class="ti-id-badge menu-icon"></i>
               <span class="menu-title">Kupon Perubahan</span>
             </a>
@@ -248,7 +248,7 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-  
+
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <!-- plugins:js -->
   <script src="{{asset('assets/vendors/js/vendor.bundle.base.js')}}"></script>
