@@ -51,3 +51,7 @@ Route::get('/user/{users:slug}', 'UserController@show')->name('user.detailuser')
 Route::get('/kupon/all-kupon', 'CouponController@index')->name('listkupon');
 Route::get('/kupon/buat-kupon', 'CouponController@create')->name('kupon.create');
 Route::post('/kupon/buat-kupon', 'CouponController@store')->name('kupon.store');
+
+// ******ROUTE FOR RAPORT******* //
+Route::get('/raport/raportuser', 'RaportuserController@index')->name('user.index');
+Route::get('/raport/raportsekolah', 'RaportschoolController@index')->name('school.index');
