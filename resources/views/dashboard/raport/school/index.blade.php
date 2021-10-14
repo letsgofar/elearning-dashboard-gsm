@@ -30,7 +30,7 @@
                                 @foreach ($raportschools as $raportschool)
                                 <tr>
                                     <td class="py-1">
-                                    <img src="{{asset('assets/images/faces/face1.jpg')}}" alt="image"/>
+                                    <img src="{{asset('assets/images/faces/face100.png')}}" alt="image"/>
                                     </td>
                                     <td>
                                     {{ $raportschool->name }}
@@ -41,7 +41,7 @@
                                     </div>
                                     </td>
                                     <td class="d-flex justify-content-center">
-                                        <a href="" class="btn btn-sm btn-primary rounded-pill mx-2">Detail</a>
+                                        <a href="/raport/raportsekolah/{{ $raportschool->slug }}" class="btn btn-sm btn-primary rounded-pill mx-2">Detail</a>
                                         <a href="" class="btn btn-sm btn-warning rounded-pill">Edit</a>
                                     </td>
                                 </tr>

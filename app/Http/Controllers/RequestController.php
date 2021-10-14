@@ -2,21 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Raportuser;
+use App\School;
+use App\User;
 use Illuminate\Http\Request;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-class RaportuserController extends Controller
+class RequestController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function mentorindex()
     {
-        $rapotusers = Raportuser::paginate(5);
-        return view('dashboard.raport.user.index', ['raportusers' => $rapotusers]);
+        $requests = User::where('role_id', '3')->latest()->paginate(5);
+        return view('dashboard.request.mentor.index', ['requests' => $requests]);
+    }
+
+    public function sekolahmodelindex()
+    {
+        $requests = School::where('label_id', '3')->latest()->paginate(5);
+        return view('dashboard.request.sekolahmodel.index', ['requests' => $requests]);
     }
 
     /**
@@ -46,9 +52,9 @@ class RaportuserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Raportuser $raportusers)
+    public function show($id)
     {
-        return view('dashboard.raport.user.show', ['raportusers' => $raportusers]);
+        //
     }
 
     /**

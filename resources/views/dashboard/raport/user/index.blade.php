@@ -41,7 +41,7 @@
                                     </div>
                                     </td>
                                     <td class="d-flex justify-content-center">
-                                        <a href="" class="btn btn-sm btn-primary rounded-pill mx-2">Detail</a>
+                                        <a href="/raport/raportuser/{{ $raportuser->slug }}" class="btn btn-sm btn-primary rounded-pill mx-2">Detail</a>
                                         <a href="" class="btn btn-sm btn-warning rounded-pill">Edit</a>
                                     </td>
                                 </tr>

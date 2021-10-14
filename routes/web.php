@@ -52,6 +52,16 @@ Route::get('/kupon/all-kupon', 'CouponController@index')->name('listkupon');
 Route::get('/kupon/buat-kupon', 'CouponController@create')->name('kupon.create');
 Route::post('/kupon/buat-kupon', 'CouponController@store')->name('kupon.store');
 
-// ******ROUTE FOR RAPORT******* //
+// ******ROUTE FOR RAPORTUSER******* //
 Route::get('/raport/raportuser', 'RaportuserController@index')->name('user.index');
+Route::get('/raport/raportuser/{raportusers:slug}', 'RaportuserController@show')->name('user.show');
+
+
+// ******ROUTE FOR RAPORTSEKOLAH******* //
 Route::get('/raport/raportsekolah', 'RaportschoolController@index')->name('school.index');
+Route::get('/raport/raportsekolah/{raportschools:slug}', 'RaportschoolController@show')->name('school.show');
+
+
+// ******ROUTE FOR PERMINTAAN******* //
+Route::get('request/permintaanmentor', 'RequestController@mentorindex')->name('requestmentor.index');
+Route::get('request/permintaansekolah', 'RequestController@sekolahmodelindex')->name('requestsekolahmodel.index');
