@@ -22,6 +22,10 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
 
+  <!--icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--icon-->
+  @include('dashboard.layouts.style')
 </head>
 <body data-chardin-sequenced="true" data-chardin-auto="false" data-chardin-delay="800">
   <div class="container-scroller">

@@ -48,11 +48,11 @@
                                     {{$coupon->kuota}}
                                 </td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-warning btn-sm">Edit</button>
+                                    <a href="" class="button-icon-edit mr-1"><i class="fa fa-pencil"></i></a>
                                     <form class="d-inline" action="" method="POST">
                                     @method('delete')
                                     @csrf
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    <button type="submit" class="button-icon-delete mr-1"><i class="fa fa-trash"></i></button>
                                     </form>
                                 </td>
                                 </tr>

@@ -40,7 +40,7 @@
                       </td>
                       <td>
                         <div class="text-center">
-                        <a href="" type="button" class="btn btn-info btn-sm">Accept</a>
+                        <a href="" type="button" class="btn btn-theme btn-sm">Accept</a>
                         <a href="" type="button" class="btn btn-danger btn-sm">Decline</a>
                         </div>
                       </td>

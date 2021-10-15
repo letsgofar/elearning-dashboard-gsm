@@ -29,7 +29,7 @@
                             <tbody>
                                 @foreach ($raportusers as $raportuser)
                                 <tr>
-                                    <td class="py-1">
+                                    <td class="py-1 text-center">
                                     <img src="{{asset('assets/images/faces/face1.jpg')}}" alt="image"/>
                                     </td>
                                     <td>
@@ -41,8 +41,8 @@
                                     </div>
                                     </td>
                                     <td class="d-flex justify-content-center">
-                                        <a href="/raport/raportuser/{{ $raportuser->slug }}" class="btn btn-sm btn-primary rounded-pill mx-2">Detail</a>
-                                        <a href="" class="btn btn-sm btn-warning rounded-pill">Edit</a>
+                                        <a href="/raport/raportuser/{{ $raportuser->slug }}" class="button-icon-read mr-1"><i class="fa fa-info-circle"></i></a>
+                                        <a href="" class="button-icon-edit mr-1"><i class="fa fa-pencil"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
