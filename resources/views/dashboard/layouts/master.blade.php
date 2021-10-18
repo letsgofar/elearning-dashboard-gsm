@@ -36,12 +36,14 @@
     google.charts.load('current', {'packages':['corechart']});
 
     // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawChart);
+    google.charts.setOnLoadCallback(drawChart1);
+	google.charts.setOnLoadCallback(drawChart2);
+	google.charts.setOnLoadCallback(drawChart3);
 
     // Callback that creates and populates a data table,
     // instantiates the pie chart, passes in the data and
     // draws it.
-    function drawChart() {
+    function drawChart1() {
 
     // Create the data table.
     var data = new google.visualization.DataTable();
@@ -61,7 +63,55 @@
         'height':300};
 
         // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
+        chart.draw(data, options);
+        }
+		
+		function drawChart2() {
+
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    data.addRows([
+        ['Mushrooms', 2],
+        ['Onions', 2],
+        ['Olives', 2],
+        ['Zucchini', 1],
+        ['Pepperoni', 1]
+    ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+        'width':400,
+        'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+        chart.draw(data, options);
+        }
+		
+		function drawChart3() {
+
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Topping');
+    data.addColumn('number', 'Slices');
+    data.addRows([
+        ['Mushrooms', 1],
+        ['Onions', 2],
+        ['Olives', 1],
+        ['Zucchini', 3],
+        ['Pepperoni', 1]
+    ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+        'width':400,
+        'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div3'));
         chart.draw(data, options);
         }
     </script>
@@ -75,7 +125,7 @@
         <!-- partial:partials/_navbar.html -->
         <nav id="top-nav" class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div id="logoweb" class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" data-intro="Selamat datang di website Dashboard Admin GSM, Yuk kita tur dulu!" data-position="bottom" >
-            {{-- <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{{asset('assets/images/main-icon2.png')}}" class="mr-2" alt="logo"/></a> --}}
+            <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{{asset('assets/images/main-icon2.png')}}" class="mr-2" alt="logo"/></a>
             <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('assets/images/small-icon.png')}}" alt="logo"/></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
