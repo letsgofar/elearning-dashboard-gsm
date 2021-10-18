@@ -66,24 +66,24 @@
                         <div class="col-4">
                             <div class="card">
                                 <div class="card-body">
-                                  <h4 class="card-title text-center">Spesial</h4>
-                                  <canvas id="pieChart"></canvas>
+                                    <h4 class="card-title text-center">Spesial</h4>
+                                    <div id="chart_div"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card">
                                 <div class="card-body">
-                                  <h4 class="card-title text-center">Basic</h4>
-                                  <canvas id="pieChart"></canvas>
+                                    <h4 class="card-title text-center">Basic</h4>
+                                    <div id="chart_div"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="card">
                                 <div class="card-body">
-                                  <h4 class="card-title text-center">Advanced</h4>
-                                  <canvas id="pieChart"></canvas>
+                                    <h4 class="card-title text-center">Advanced</h4>
+                                    <div id="chart_div"></div>
                                 </div>
                             </div>
                         </div>
