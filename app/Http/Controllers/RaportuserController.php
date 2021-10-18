@@ -26,7 +26,7 @@ class RaportuserController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.raport.user.create');
     }
 
     /**

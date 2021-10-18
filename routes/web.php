@@ -27,8 +27,8 @@ Route::delete('/module/advanced/{modules:slug}/delete', 'ModuleController@destro
 
 
 // ******ROUTE FOR SCHOOL******* //
-Route::get('/sekolah/model', 'SchoolController@indexmodel')->name('sekolah.model');
-Route::get('/sekolah/emodel', 'SchoolController@indexemodel')->name('sekolah.emodel');
+Route::get('/sekolah/sekolahgsm', 'SchoolController@indexmodel')->name('sekolah.model');
+Route::get('/sekolah/e-model', 'SchoolController@indexemodel')->name('sekolah.emodel');
 Route::get('/sekolah/jejaring', 'SchoolController@indexjejaring')->name('sekolah.jejaring');
 Route::get('/sekolah/indonesia', 'SchoolController@indexindonesia')->name('sekolah.indonesia');
 
@@ -56,13 +56,16 @@ Route::get('/kupon/buat-kupon', 'CouponController@create')->name('kupon.create')
 Route::post('/kupon/buat-kupon', 'CouponController@store')->name('kupon.store');
 
 // ******ROUTE FOR RAPORTUSER******* //
-Route::get('/raport/raportuser', 'RaportuserController@index')->name('user.index');
-Route::get('/raport/raportuser/{raportusers:slug}', 'RaportuserController@show')->name('user.show');
+Route::get('/raport/guru', 'RaportuserController@index')->name('raportuser.index');
+Route::get('/raport/raportuser/newraportuser', 'RaportuserController@create')->name('raportuser.create');
+Route::get('/raport/raportuser/{raportusers:slug}', 'RaportuserController@show')->name('raportuser.show');
 
 
 // ******ROUTE FOR RAPORTSEKOLAH******* //
-Route::get('/raport/raportsekolah', 'RaportschoolController@index')->name('school.index');
+Route::get('/raport/instansi', 'RaportschoolController@index')->name('school.index');
+Route::get('/raport/raportsekolah/newraportsekolah', 'RaportschoolController@create')->name('raportsekolah.create');
 Route::get('/raport/raportsekolah/{raportschools:slug}', 'RaportschoolController@show')->name('school.show');
+
 
 
 // ******ROUTE FOR PERMINTAAN******* //

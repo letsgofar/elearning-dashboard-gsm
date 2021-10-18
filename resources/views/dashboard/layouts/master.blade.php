@@ -189,25 +189,32 @@
         <nav style="z-index:1000;" class="sidebar sidebar-offcanvas" id="sidebar" data-intro="Menu berupa kumpulan kegiatan yang bisa Admin lakukan ~" data-position="right" >
             <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link {{request()->is('/') ? ' active' : ''}}" href="{{route('home')}}">
+                <a class="nav-link" href="/">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">Home</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{request()->is('/module/create') ? ' active' : ''}}" href="{{route('module.create')}}">
+                <a class="nav-link" href="/module/create">
                 <i class="ti-write menu-icon"></i>
                 <span class="menu-title">Buat Modul</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="pages/documentation/documentation.html">
-                <i class="ti-agenda menu-icon"></i>
-                <span class="menu-title">Buat Format Raport</span>
+                <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                <i class="icon-columns menu-icon"></i>
+                <span class="menu-title">Buat Raport</span>
+                <i class="menu-arrow"></i>
                 </a>
+                <div class="collapse" id="form-elements">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"><a class="nav-link" href="/raport/raportuser/newraportuser">Raport User</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/raport/raportsekolah/newraportsekolah">Raport Sekolah</a></li>
+                </ul>
+                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('kupon.create')}}">
+                <a class="nav-link" href="/kupon/buat-kupon">
                 <i class="ti-credit-card menu-icon"></i>
                 <span class="menu-title">Buat Kupon Perubahan</span>
                 </a>
@@ -226,9 +233,9 @@
                 </a>
                 <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link {{request()->is('/module/special') ? ' active' : ''}}" href="{{route('module.special')}}">Modul Spesial</a></li>
-                    <li class="nav-item"><a class="nav-link {{request()->is('/module/basic') ? ' active' : ''}}" href="{{route('module.basic')}}">Modul Basic</a></li>
-                    <li class="nav-item"><a class="nav-link {{request()->is('/module/advanced') ? ' active' : ''}}" href="{{route('module.advanced')}}">Modul Advanced</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/module/special">Modul Spesial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/module/basic">Modul Basic</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/module/advanced">Modul Advanced</a></li>
                 </ul>
                 </div>
             </li>
@@ -240,10 +247,10 @@
                 </a>
                 <div class="collapse" id="icons">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link {{request()->is('/sekolah/model') ? ' active' : ''}}" href="{{route('sekolah.model')}}">Sekolah Model</a></li>
-                    <li class="nav-item"><a class="nav-link {{request()->is('/sekolah/emodel') ? ' active' : ''}}" href="{{route('sekolah.emodel')}}">Sekolah e-Model</a></li>
-                    <li class="nav-item"><a class="nav-link {{request()->is('/sekolah/jejaring') ? ' active' : ''}}" href="{{route('sekolah.jejaring')}}">Sekolah Jejaring</a></li>
-                    <li class="nav-item"><a class="nav-link {{request()->is('/sekolah/indonesia') ? ' active' : ''}}" href="{{route('sekolah.indonesia')}}">Sekolah Indonesia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/sekolah/sekolahgsm">Sekolah Model</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/sekolah/e-model">Sekolah e-Model</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/sekolah/jejaring">Sekolah Jejaring</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/sekolah/indonesia">Sekolah Indonesia</a></li>
                 </ul>
                 </div>
             </li>
@@ -255,8 +262,8 @@
                 </a>
                 <div class="collapse" id="charts">
                 <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('/raport/raportuser')}}">Raport User</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{url('/raport/raportsekolah')}}">Raport Sekolah</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/raport/guru')}}">Raport User</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{url('/raport/instansi')}}">Raport Sekolah</a></li>
                 </ul>
                 </div>
             </li>

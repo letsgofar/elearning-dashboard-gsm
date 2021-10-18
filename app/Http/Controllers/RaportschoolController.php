@@ -25,7 +25,7 @@ class RaportschoolController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.raport.school.create');
     }
 
     /**
