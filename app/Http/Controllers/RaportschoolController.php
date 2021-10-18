@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Raportschool;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class RaportschoolController extends Controller
@@ -14,7 +16,7 @@ class RaportschoolController extends Controller
      */
     public function index()
     {
-        $rapotschools = Raportschool::paginate(5);
+        $rapotschools = Raportschool::latest()->paginate(5);
         return view('dashboard.raport.school.index', ['raportschools' => $rapotschools]);
     }
 
@@ -25,7 +27,8 @@ class RaportschoolController extends Controller
      */
     public function create()
     {
-        return view('dashboard.raport.school.create');
+        $categories = Category::get();
+        return view('dashboard.raport.school.create', ['categories' => $categories]);
     }
 
     /**
@@ -34,9 +37,21 @@ class RaportschoolController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Raportschool $raportschools)
     {
-        //
+        $attr = request()->validate([
+            'name' => 'required',
+            'nama_modul' => 'required',
+            'nilai_modul' => 'required',
+            'jenis_modul' => 'required',
+        ]);
+
+        $slug = Str::slug($request->name);
+        $attr['slug'] = $slug;
+
+        $raportschools->create($attr);
+
+        return redirect()->to('/raport/instansi');
     }
 
     /**

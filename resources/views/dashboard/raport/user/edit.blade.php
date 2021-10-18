@@ -13,9 +13,9 @@
             <div class="col-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                <h4 class="card-title">Buat Raport User</h4>
+                <h4 class="card-title">Edit Raport User</h4>
                 <p class="card-description">
-                    Admin bisa membuat raport untuk user dengan mengisi form berikut
+                    Admin bisa mengedit raport untuk user dengan mengisi form berikut
                 </p>
                 <form class="forms-sample" method="POST" action="/raport/raportuser/newraportuser">
                     @csrf

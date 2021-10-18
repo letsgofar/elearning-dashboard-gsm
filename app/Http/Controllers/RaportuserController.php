@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Raportuser;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class RaportuserController extends Controller
@@ -15,7 +17,7 @@ class RaportuserController extends Controller
      */
     public function index()
     {
-        $rapotusers = Raportuser::paginate(5);
+        $rapotusers = Raportuser::latest()->paginate(5);
         return view('dashboard.raport.user.index', ['raportusers' => $rapotusers]);
     }
 
@@ -26,7 +28,8 @@ class RaportuserController extends Controller
      */
     public function create()
     {
-        return view('dashboard.raport.user.create');
+        $categories = Category::get();
+        return view('dashboard.raport.user.create', ['categories' => $categories]);
     }
 
     /**
@@ -35,9 +38,21 @@ class RaportuserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Raportuser $raportusers)
     {
-        //
+        $attr = request()->validate([
+            'name' => 'required',
+            'nama_modul' => 'required',
+            'nilai_modul' => 'required',
+            'jenis_modul' => 'required',
+        ]);
+
+        $slug = Str::slug($request->name);
+        $attr['slug'] = $slug;
+
+        $raportusers->create($attr);
+
+        return redirect()->to('/raport/guru');
     }
 
     /**
