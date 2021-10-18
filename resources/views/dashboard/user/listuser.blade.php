@@ -46,9 +46,9 @@
                         </td>
                         <td>
                             <div class="text-center">
-                                <a href="/user/{{$user->slug}}" class="button-icon-read mr-1"><i class="fa fa-info-circle"></i></a>
-                                <a href="" class="button-icon-edit mr-1"><i class="fa fa-pencil"></i></a>
-                                <form class="d-inline" action="" method="POST">
+                                <a href="/user/{{ $user->slug }}" class="button-icon-read mr-1"><i class="fa fa-info-circle"></i></a>
+                                <a href="/user/{{ $user->slug }}/edit" class="button-icon-edit mr-1"><i class="fa fa-pencil"></i></a>
+                                <form class="d-inline" action="/user/{{ $user->slug }}/delete" method="POST">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="button-icon-delete mr-1"><i class="fa fa-trash"></i></button>

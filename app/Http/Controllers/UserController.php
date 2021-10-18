@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -56,9 +57,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $users)
     {
-        //
+        $roles = Role::get();
+        return view('dashboard.user.useredit', [
+            'users' => $users,
+            'roles' => $roles,
+        ]);
     }
 
     /**
@@ -68,9 +73,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $users, Role $roles)
     {
-        //
+        $attr = request()->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+
+        $attr['role_id'] = request('role');
+        $attr['jabatan'] = request('jabatan');
+        $attr['sekolah'] = request('sekolah');
+        $attr['kabupaten'] = request('kabupaten');
+
+        $users->update($attr);
+
+        return redirect()->to('user/listuser');
     }
 
     /**
@@ -79,8 +96,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $users)
     {
-        //
+        $users->delete();
+        return redirect('user/listuser');
     }
 }

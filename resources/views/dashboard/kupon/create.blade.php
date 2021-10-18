@@ -3,70 +3,70 @@
 @section('content')
 <div class="main-panel">
     <div class="content-wrapper">
-      <div class="row">
-        @if (session('status'))
-          <div class="ml-3 alert alert-success">
-              {{-- {{ session('status') }} --}}
-          </div>
-          @endif
-        <div class="col-12 grid-margin stretch-card">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="card-title">Buat Kupon Perubahan</h4>
-              <p class="card-description">
-                Admin bisa membuat kupon dengan mengisi form berikut
-              </p>
-              <form class="forms-sample" name="add_kupon_form" id="add_kupon_form" method="POST" action="/kupon/buat-kupon">
-                @csrf
-                <div class="form-group">
-                  <label for="">Nama Kupon</label>
-                  <input type="text" class="form-control" id="coupon_title" name="nama" placeholder="Nama Kupon" required>
-                </div>
-                <div class="form-group">
-                    <label for="">Kode Kupon</label>
-                    <input type="text" class="form-control" id="coupon_code" name="code" placeholder="Kode Kupon" required>
-                  </div>
-                  <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Kategori Kupon</label>
-                    <div class="col-sm-4">
-                      <div class="form-check">
-                        <label for="inlineRadio1" class="form-check-label">
-                          <input onclick="selectedKategori()" type="radio" class="form-check-input" id="inlineRadio1" value="date" name="radioInline">
-                          Date
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-sm-5">
-                      <div class="form-check">
-                        <label for="inlineRadio2" class="form-check-label">
-                          <input onclick="selectedKategori()" type="radio" class="form-check-input" id="inlineRadio2" value="kuota" name="radioInline">
-                          Kuota
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group row">
-                      <div class="col-sm-3"></div>
-                      <div class="col-sm-4">
-                        <div class="form-group" id="rangeDate" style="display:none;">
-                          <label for="">Date</label>
-                              <input type="date" class="form-control" name="date" placeholder="dd-mm-yyyy">
-                        </div>
-                      </div>
-                      <div class="col-sm-5">
-                        <div class="form-group" id="kuotaView" style="display:none;">
-                            <label for="">Kuota</label>
-                                <input type="text" class="form-control" name="kuota" placeholder="Masukkan Kuota">
-                        </div>
-                    </div>
-                  </div>
-                <button class="btn btn-primary mr-2" type="submit">Buat Kupon</button>
-              </form>
+        <div class="row">
+            @if (session('status'))
+            <div class="ml-3 alert alert-success">
+                {{-- {{ session('status') }} --}}
             </div>
-          </div>
+            @endif
+            <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                <h4 class="card-title">Buat Kupon Perubahan</h4>
+                <p class="card-description">
+                    Admin bisa membuat kupon dengan mengisi form berikut
+                </p>
+                <form class="forms-sample" name="add_kupon_form" id="add_kupon_form" method="POST" action="/kupon/buat-kupon">
+                    @csrf
+                    <div class="form-group">
+                    <label for="">Nama Kupon</label>
+                    <input type="text" class="form-control" id="coupon_title" name="nama" placeholder="Nama Kupon" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Kode Kupon</label>
+                        <input type="text" class="form-control" id="coupon_code" name="code" placeholder="Kode Kupon" required>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Kategori Kupon</label>
+                        <div class="col-sm-4">
+                        <div class="form-check">
+                            <label for="inlineRadio1" class="form-check-label">
+                            <input onclick="selectedKategori()" type="radio" class="form-check-input" id="inlineRadio1" value="date" name="radioInline">
+                            Date
+                            </label>
+                        </div>
+                        </div>
+                        <div class="col-sm-5">
+                        <div class="form-check">
+                            <label for="inlineRadio2" class="form-check-label">
+                            <input onclick="selectedKategori()" type="radio" class="form-check-input" id="inlineRadio2" value="kuota" name="radioInline">
+                            Kuota
+                            </label>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-4">
+                            <div class="form-group" id="rangeDate" style="display:none;">
+                            <label for="">Date</label>
+                                <input type="date" class="form-control" name="date" placeholder="dd-mm-yyyy">
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group" id="kuotaView" style="display:none;">
+                                <label for="">Kuota</label>
+                                    <input type="text" class="form-control" name="kuota" placeholder="Masukkan Kuota">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mr-2" type="submit">Buat Kupon</button>
+                </form>
+                </div>
+            </div>
+            </div>
         </div>
-      </div>
     </div>
 @endsection
 

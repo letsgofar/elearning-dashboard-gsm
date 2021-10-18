@@ -43,6 +43,9 @@ Route::get('sekolah/indonesia/{schools:slug}', 'SchoolController@showsekolahindo
 // ******ROUTE FOR USER******* //
 Route::get('/user/listuser', 'UserController@index')->name('user.listuser');
 Route::get('/user/{users:slug}', 'UserController@show')->name('user.detailuser');
+Route::get('/user/{users:slug}/edit', 'UserController@edit')->name('user.edituser');
+Route::patch('/user/{users:slug}/edit', 'UserController@update')->name('user.updateuser');
+Route::delete('/user/{users:slug}/delete', 'UserController@destroy')->name('user.deleteuser');
 // ******END ROUTE FOR USER******* //
 
 
