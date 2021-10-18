@@ -67,7 +67,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title text-center">Spesial</h4>
-                                    <div id="chart_div"></div>
+                                    <div id="chart_div1"></div>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title text-center">Basic</h4>
-                                    <div id="chart_div"></div>
+                                    <div id="chart_div2"></div>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title text-center">Advanced</h4>
-                                    <div id="chart_div"></div>
+                                    <div id="chart_div3"></div>
                                 </div>
                             </div>
                         </div>
