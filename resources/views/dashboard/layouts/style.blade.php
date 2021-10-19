@@ -51,4 +51,17 @@
         border-color: #4B49AC;
     }
 
+    .empatmenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* horizontal spacing */
+    align-content: space-between;   /* vertical spacing */
+    }
+
+    .pojok-atas, .pojok-bawah {
+    flex-basis: 100%;    /* to force .bottom to wrap */
+    display: flex;
+    justify-content: space-between;
+    }
+
 </style>
