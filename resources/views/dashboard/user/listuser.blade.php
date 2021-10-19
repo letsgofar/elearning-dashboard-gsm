@@ -49,7 +49,7 @@
                                 <a href="/user/{{ $user->slug }}" class="button-icon-read mr-1"><i class="fa fa-info-circle"></i></a>
                                 <a href="/user/{{ $user->slug }}/edit" class="button-icon-edit mr-1"><i class="fa fa-pencil"></i></a>
                                 <button type="button" class="button-icon-delete mr-1" data-bs-toggle="modal" data-bs-target="#defaultModal_{{$user->id}} " style=""><i class="fa fa-trash"></i></button>
-               <!-- Modal -->
+                                <!-- Modal -->
 								<div class="modal fade" id="defaultModal_{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 									<div class="modal-dialog" role="document">
 										<div class="modal-content">
@@ -73,7 +73,7 @@
 										</div>
 									</div>
 								</div>
-                <!-- Modal -->
+                                <!-- Modal -->
 							</div>
                         </td>
                         </tr>
