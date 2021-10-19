@@ -72,9 +72,13 @@ class RaportuserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Raportuser $raportusers)
     {
-        //
+        $categories = Category::get();
+        return view('dashboard.raport.user.edit', [
+            'raportusers' => $raportusers,
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -84,9 +88,23 @@ class RaportuserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Raportuser $raportusers)
     {
-        //
+        $attr = request()->validate([
+            'name' => 'required',
+            'nama_modul' => 'required',
+            'nilai_modul' => 'required',
+            'jenis_modul' => 'required',
+        ]);
+
+        $slug = Str::slug($request->name);
+        $attr['slug'] = $slug;
+
+        $raportusers->update($attr);
+
+        // session()->flash('success', 'The post has been updated');
+
+        return redirect()->to('raport/guru');
     }
 
     /**

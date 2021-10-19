@@ -71,9 +71,13 @@ class RaportschoolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Raportschool $raportschools)
     {
-        //
+        $categories = Category::get();
+        return view('dashboard.raport.school.edit', [
+            'raportschools' => $raportschools,
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -83,9 +87,23 @@ class RaportschoolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Raportschool $raportschools)
     {
-        //
+        $attr = request()->validate([
+            'name' => 'required',
+            'nama_modul' => 'required',
+            'nilai_modul' => 'required',
+            'jenis_modul' => 'required',
+        ]);
+
+        $slug = Str::slug($request->name);
+        $attr['slug'] = $slug;
+
+        $raportschools->update($attr);
+
+        // session()->flash('success', 'The post has been updated');
+
+        return redirect()->to('raport/instansi');
     }
 
     /**

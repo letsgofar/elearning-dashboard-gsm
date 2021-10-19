@@ -60,6 +60,8 @@ Route::get('/raport/guru', 'RaportuserController@index')->name('raportuser.index
 Route::get('/raport/raportuser/newraportuser', 'RaportuserController@create')->name('raportuser.create');
 Route::post('/raport/raportuser/newraportuser', 'RaportuserController@store')->name('raportuser.store');
 Route::get('/raport/raportuser/{raportusers:slug}', 'RaportuserController@show')->name('raportuser.show');
+Route::get('/raport/guru/edit/{raportusers:slug}', 'RaportuserController@edit')->name('raportuser.edit');
+Route::patch('/raport/guru/edit/{raportusers:slug}', 'RaportuserController@update')->name('raportuser.update');
 
 
 // ******ROUTE FOR RAPORTSEKOLAH******* //
@@ -67,7 +69,8 @@ Route::get('/raport/instansi', 'RaportschoolController@index')->name('school.ind
 Route::get('/raport/raportsekolah/newraportsekolah', 'RaportschoolController@create')->name('raportsekolah.create');
 Route::post('/raport/raportsekolah/newraportsekolah', 'RaportschoolController@store')->name('raportsekolah.store');
 Route::get('/raport/raportsekolah/{raportschools:slug}', 'RaportschoolController@show')->name('school.show');
-
+Route::get('/raport/instansi/edit/{raportschools:slug}', 'RaportschoolController@edit')->name('raportschool.edit');
+Route::patch('/raport/instansi/edit/{raportschools:slug}', 'RaportschoolController@update')->name('school.update');
 
 
 // ******ROUTE FOR PERMINTAAN******* //

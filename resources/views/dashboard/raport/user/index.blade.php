@@ -42,7 +42,7 @@
                                     </td>
                                     <td class="d-flex justify-content-center">
                                         <a href="/raport/raportuser/{{ $raportuser->slug }}" class="button-icon-read mr-1"><i class="fa fa-info-circle"></i></a>
-                                        <a href="" class="button-icon-edit mr-1"><i class="fa fa-pencil"></i></a>
+                                        <a href="/raport/guru/edit/{{ $raportuser->slug }}" class="button-icon-edit mr-1"><i class="fa fa-pencil"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach
