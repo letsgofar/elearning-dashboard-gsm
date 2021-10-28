@@ -25,6 +25,20 @@ class RequestController extends Controller
         return view('dashboard.request.sekolahmodel.index', ['requests' => $requests]);
     }
 
+    public function mentorupdate(Request $request, User $users)
+    {
+        $users->role_id = 2;
+        $users->update();
+        return redirect('/request/permintaanmentor')->with('success', 'Permintaan mentor berhasil diterima !');
+    }
+
+    public function sekolahmodelupdate(Request $request, School $schools)
+    {
+        $schools->label_id = 1;
+        $schools->update();
+        return redirect('/request/permintaansekolah')->with('success', 'Permintaan sekolah model berhasil diterima !');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

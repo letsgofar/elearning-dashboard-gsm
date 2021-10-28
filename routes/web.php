@@ -80,3 +80,5 @@ Route::patch('/raport/instansi/edit/{raportschools:slug}', 'RaportschoolControll
 // ******ROUTE FOR PERMINTAAN******* //
 Route::get('request/permintaanmentor', 'RequestController@mentorindex')->name('requestmentor.index');
 Route::get('request/permintaansekolah', 'RequestController@sekolahmodelindex')->name('requestsekolahmodel.index');
+Route::patch('request/{schools:slug}/accept', 'RequestController@sekolahmodelupdate')->name('requestschool.accept');
+Route::patch('request/{users:slug}', 'RequestController@mentorupdate')->name('requestmentor.accept');
