@@ -66,7 +66,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
         chart.draw(data, options);
         }
-		
+
 		function drawChart2() {
 
     // Create the data table.
@@ -90,7 +90,7 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
         chart.draw(data, options);
         }
-		
+
 		function drawChart3() {
 
     // Create the data table.
@@ -413,6 +413,7 @@
 <!-- End custom js for this page-->
 
     @yield('js')
+    @include('sweetalert::alert')
 
 </body>
 

@@ -52,7 +52,7 @@ class RaportuserController extends Controller
 
         $raportusers->create($attr);
 
-        return redirect()->to('/raport/guru');
+        return redirect()->to('/raport/guru')->with('success', 'Raport berhasil dibuat !');
     }
 
     /**
@@ -104,7 +104,7 @@ class RaportuserController extends Controller
 
         // session()->flash('success', 'The post has been updated');
 
-        return redirect()->to('raport/guru');
+        return redirect()->to('raport/guru')->with('success', 'Raport berhasil diperbarui !');
     }
 
     /**

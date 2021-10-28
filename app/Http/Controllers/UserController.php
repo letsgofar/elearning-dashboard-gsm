@@ -87,7 +87,7 @@ class UserController extends Controller
 
         $users->update($attr);
 
-        return redirect()->to('user/listuser');
+        return redirect()->to('user/listuser')->with('success', 'Data User berhasil diperbarui !');
     }
 
     /**
@@ -99,6 +99,6 @@ class UserController extends Controller
     public function destroy(User $users)
     {
         $users->delete();
-        return redirect('user/listuser');
+        return redirect('user/listuser')->with('success', 'Data User berhasil dihapus !');
     }
 }

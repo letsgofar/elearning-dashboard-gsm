@@ -85,7 +85,7 @@ class ModuleController extends Controller
         $attr['grade_id'] = request('grade');
 
         Module::create($attr);
-        return redirect()->to('/');
+        return redirect()->to('/')->with('success', 'Modul berhasil dibuat !');;
     }
 
     /**
@@ -184,7 +184,7 @@ class ModuleController extends Controller
 
         $modules->update($attr);
 
-        return redirect()->to('/module/special');
+        return redirect()->to('/module/special')->with('success', 'Modul berhasil diperbarui !');
     }
 
     public function updatebasic(Request $request, Module $modules)
@@ -210,7 +210,7 @@ class ModuleController extends Controller
 
         $modules->update($attr);
 
-        return redirect()->to('/module/basic');
+        return redirect()->to('/module/basic')->with('success', 'Modul berhasil diperbarui !');
     }
 
     public function updateadvanced(Request $request, Module $modules)
@@ -236,7 +236,7 @@ class ModuleController extends Controller
 
         $modules->update($attr);
 
-        return redirect()->to('/module/advanced');
+        return redirect()->to('/module/advanced')->with('success', 'Modul berhasil diperbarui !');
     }
 
     /**
@@ -253,18 +253,18 @@ class ModuleController extends Controller
     public function destroyspecial(Module $modules)
     {
         $modules->delete();
-        return redirect()->to('/module/special');
+        return redirect()->to('/module/special')->with('success', 'Modul berhasil dihapus !');
     }
 
     public function destroybasic(Module $modules)
     {
         $modules->delete();
-        return redirect()->to('/module/basic');
+        return redirect()->to('/module/basic')->with('success', 'Modul berhasil dihapus !');
     }
 
     public function destroyadvanced(Module $modules)
     {
         $modules->delete();
-        return redirect()->to('/module/advanced');
+        return redirect()->to('/module/advanced')->with('success', 'Modul berhasil dihapus !');
     }
 }

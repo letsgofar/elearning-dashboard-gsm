@@ -51,7 +51,7 @@ class RaportschoolController extends Controller
 
         $raportschools->create($attr);
 
-        return redirect()->to('/raport/instansi');
+        return redirect()->to('/raport/instansi')->with('success', 'Raport berhasil dibuat !');
     }
 
     /**
@@ -103,7 +103,7 @@ class RaportschoolController extends Controller
 
         // session()->flash('success', 'The post has been updated');
 
-        return redirect()->to('raport/instansi');
+        return redirect()->to('raport/instansi')->with('success', 'Raport berhasil diperbarui !');
     }
 
     /**

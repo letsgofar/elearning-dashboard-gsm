@@ -54,6 +54,10 @@ Route::delete('/user/{users:slug}/delete', 'UserController@destroy')->name('user
 Route::get('/kupon/all-kupon', 'CouponController@index')->name('listkupon');
 Route::get('/kupon/buat-kupon', 'CouponController@create')->name('kupon.create');
 Route::post('/kupon/buat-kupon', 'CouponController@store')->name('kupon.store');
+Route::get('/kupon/{coupons:slug}/edit', 'CouponController@edit')->name('kupon.edit');
+Route::patch('/kupon/{coupons:slug}/edit', 'CouponController@update')->name('kupon.update');
+Route::delete('/kupon/{coupons:slug}/delete', 'CouponController@destroy')->name('kupon.delete');
+
 
 // ******ROUTE FOR RAPORTUSER******* //
 Route::get('/raport/guru', 'RaportuserController@index')->name('raportuser.index');

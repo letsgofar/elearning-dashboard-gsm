@@ -17,7 +17,7 @@
                 <p class="card-description">
                     Admin bisa membuat raport untuk sekolah dengan mengisi form berikut
                 </p>
-                <form class="forms-sample" method="POST" action="/raport/instansi/newraportinstansi">
+                <form class="forms-sample" method="POST" action="/raport/raportsekolah/newraportsekolah">
                     @csrf
                     <div class="form-group">
                         <label for="name">Nama Sekolah</label>

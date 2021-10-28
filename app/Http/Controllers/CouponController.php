@@ -46,7 +46,7 @@ class CouponController extends Controller
         $createkupon->slug = Str::slug($request->nama);
 
         $createkupon->save();
-        return redirect('/kupon/buat-kupon');
+        return redirect('/kupon/all-kupon')->with('success', 'Kupon berhasil dibuat !');
     }
 
     /**
@@ -66,9 +66,9 @@ class CouponController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Coupon $coupons)
     {
-        //
+        return view('dashboard.kupon.edit', ['coupons' => $coupons]);
     }
 
     /**
@@ -78,9 +78,16 @@ class CouponController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Coupon $coupons)
     {
-        //
+        $coupons->code = $request->code;
+        $coupons->nama = $request->nama;
+        $coupons->kuota = $request->kuota;
+        $coupons->date = $request->date;
+        $coupons->slug = Str::slug($request->nama);
+
+        $coupons->update();
+        return redirect('/kupon/all-kupon')->with('success', 'Kupon berhasil diperbarui !');
     }
 
     /**
@@ -89,8 +96,9 @@ class CouponController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Coupon $coupons)
     {
-        //
+        $coupons->delete();
+        return redirect('kupon/all-kupon')->with('success', 'Kupon berhasil dihapus !');
     }
 }
