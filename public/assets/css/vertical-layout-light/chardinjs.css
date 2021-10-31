@@ -86,4 +86,11 @@
 
 .chardinjs-no-fixed {
   z-index: auto !important;
-  position: absolute !important; }
+  position: absolute !important;}
+  
+.start-support.chardinjs-no-fixed {
+  display: none !important;}
+
+#settings-trigger.chardinjs-no-fixed {
+  display: none !important;
+}
