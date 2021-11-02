@@ -90,3 +90,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('request/{schools:slug}/accept', 'RequestController@sekolahmodelupdate')->name('requestschool.accept');
     Route::patch('request/{users:slug}', 'RequestController@mentorupdate')->name('requestmentor.accept');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
