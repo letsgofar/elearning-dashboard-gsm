@@ -1,0 +1,90 @@
+.contentBg{
+	background-image: url("../images/agsquarehijau.png");
+	display:cover;
+}
+
+.transparentBox{
+	background:none;
+	box-shadow:none;
+}
+
+.boxPutih{
+	background-color:white;
+}
+
+.boxDaun{
+	background-image:url("../images/bgdaun.png");
+	background-size:cover;
+}
+
+.judulPage{
+	margin-top:20px;
+}
+
+.logoGsmCenter{
+	content: url("../images/origsm.png");
+	display:block;
+	width:20%;
+	height:50px;
+	margin-top:50px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.bgInfo{
+	background-image: url("../images/backgroundhijau.png");
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+}
+
+.iconDipelajari{
+	content: url("../images/iconpelajari.png");
+	display:block;
+	margin-left:25%;
+	margin-right:75%;
+}
+
+.iconMateri{
+	content: url("../images/iconmateri.png");
+	display:block;
+	margin-left:25%;
+	margin-right:75%;
+}
+
+.iconTantangan{
+	content: url("../images/icontantangan.png");
+	display:block;
+	margin-left:25%;
+	margin-right:75%;
+}
+
+.iconGrup{
+	content: url("../images/icongrup.png");
+	display:block;
+	margin-left:25%;
+	margin-right:75%;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #00ffa5;
+}
+
+.owl-carousel .owl-stage-outer {
+    height: 300px;
+    margin-top: 50px;
+}
+
+.footer {
+  background-color: #efefef;
+  flex: 0 0 50px;
+  margin-top: auto;
+}
+.btn-default, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open > .dropdown-toggle.btn-default {
+    background-color: #128c7e !important;
+    border: 1px solid #128c7e !important;
+}
+
+.btn-info, .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .btn-info.focus, .btn-info:active, .btn-info:focus, .btn-info:hover, .open > .dropdown-toggle.btn-info {
+	background-color: #128c7e !important;
+	border: 1px solid #128c7e !important;
+}
