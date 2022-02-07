@@ -1,0 +1,29 @@
+.btnLogin{
+	background-color:#50a19d !important;
+}
+
+.btnLogin:hover{
+	background-color:#4de1da !important;
+}
+
+.btnLogin:focus{
+	background-color:#50a19d !important;
+}
+
+.kotakDialog{
+	border-radius: 20px;
+}
+
+.backBtn{
+	width: 5%;
+	height: 70px;
+}
+
+.tombolKembali{
+	content: url("../images/tombolKembali.png");
+	cursor: pointer;
+	width:75%;
+	height:75%;
+	margin-left:10px;
+	margin-top:10px;
+}

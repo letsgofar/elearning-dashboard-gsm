@@ -8,6 +8,10 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/elearning', function () {
+    return view('elearning.index');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
 
