@@ -16,6 +16,14 @@ Route::get('/elearning/home', function () {
     return view('elearning.home.index');
 });
 
+Route::get('/elearning/berita-gsm', function () {
+    return view('elearning.home.berita-gsm');
+});
+
+Route::get('/elearning/persebaran-gsm', function () {
+    return view('elearning.home.persebaran-gsm');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
 

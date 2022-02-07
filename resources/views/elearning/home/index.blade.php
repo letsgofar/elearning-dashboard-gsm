@@ -16,7 +16,7 @@
                         </div>
                         <div style="background-image: url('{{ asset('assets/elearning/images/background.png')}}'); background-size: cover;">
                             <div class="row" style="margin-top: 100px">
-                                <div class="col-md-3">
+                                <div class="col-md-3 mb-5">
                                     <div class="d-flex justify-content-center">
                                         <img src="{{ asset('assets/elearning/assets/images/iconpelajari.png')}}" alt="" style="height: 120px">
                                     </div>
@@ -38,7 +38,7 @@
                                         Buka Disini
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 mb-5">
                                     <div class="d-flex justify-content-center">
                                         <img src="{{ asset('assets/elearning/assets/images/icontantangan.png')}}" alt="" style="height: 120px">
                                     </div>
@@ -49,7 +49,7 @@
                                         Sudah Dinilai
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 mb-5">
                                     <div class="d-flex justify-content-center">
                                         <img src="{{ asset('assets/elearning/assets/images/icongrup.png')}}" alt="" style="height: 120px">
                                     </div>
