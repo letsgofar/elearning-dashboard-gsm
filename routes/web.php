@@ -12,6 +12,10 @@ Route::get('/elearning', function () {
     return view('elearning.index');
 });
 
+Route::get('/elearning/home', function () {
+    return view('elearning.home.index');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
 

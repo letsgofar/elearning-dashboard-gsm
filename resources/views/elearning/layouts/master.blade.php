@@ -125,7 +125,7 @@
         <!-- partial:partials/_navbar.html -->
         <nav id="top-nav" class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div id="logoweb" class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" data-intro="Selamat datang di website Dashboard Admin GSM, Yuk kita tur dulu!" data-position="bottom" >
-            <a class="navbar-brand brand-logo mr-5" href="/"><img src="{{asset('assets/images/main-icon2.png')}}" class="mr-2" alt="logo"/></a>
+            <a class="navbar-brand brand-logo mr-5" href="/"><img src="{{asset('assets/elearning/assets/images/origsm.png')}}" class="mr-2" alt="logo"/></a>
             <a class="navbar-brand brand-logo-mini" href="/"><img src="{{asset('assets/images/small-icon.png')}}" alt="logo"/></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
@@ -284,15 +284,15 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-                <i class="ti-pencil-alt menu-icon"></i>
+                <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                <i class="ti-bookmark-alt menu-icon"></i>
                 <span class="menu-title">Berbagi</span>
                 <i class="menu-arrow"></i>
                 </a>
-                <div class="collapse" id="tables">
+                <div class="collapse" id="charts">
                 <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Buat Konten Berbagi</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Lini Masa Berbagi</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/raport/guru')}}">Buat Konten Berbagi</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{url('/raport/instansi')}}">Lini Masa Berbagi</a></li>
                 </ul>
                 </div>
             </li>
