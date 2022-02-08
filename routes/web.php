@@ -44,6 +44,14 @@ Route::get('/elearning/materi/materi-advanced', function () {
     return view('elearning.materi.advanced');
 });
 
+Route::get('/elearning/berbagi/buat-konten-berbagi', function () {
+    return view('elearning.berbagi.buat-konten-berbagi');
+});
+
+Route::get('/elearning/berbagi/lini-masa-berbagi', function () {
+    return view('elearning.berbagi.lini-masa-berbagi');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
 

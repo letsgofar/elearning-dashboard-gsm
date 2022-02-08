@@ -24,6 +24,12 @@
 
     <link rel="stylesheet" href="{{asset('/assets/elearning/assets/css/purple.css')}}">
 
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!--icon-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--icon-->
@@ -293,8 +299,8 @@
                 </a>
                 <div class="collapse" id="charts">
                 <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('/raport/guru')}}">Buat Konten Berbagi</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{url('/raport/instansi')}}">Lini Masa Berbagi</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/elearning/berbagi/buat-konten-berbagi')}}">Buat Konten Berbagi</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{url('/elearning/berbagi/lini-masa-berbagi')}}">Lini Masa Berbagi</a></li>
                 </ul>
                 </div>
             </li>
