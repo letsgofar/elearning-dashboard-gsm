@@ -24,6 +24,26 @@ Route::get('/elearning/persebaran-gsm', function () {
     return view('elearning.home.persebaran-gsm');
 });
 
+Route::get('/elearning/rincian-profil', function () {
+    return view('elearning.profile.rincian-profil');
+});
+
+Route::get('/elearning/ubah-profil', function () {
+    return view('elearning.profile.ubah-profil');
+});
+
+Route::get('/elearning/materi/materi-special', function () {
+    return view('elearning.materi.special');
+});
+
+Route::get('/elearning/materi/materi-basic', function () {
+    return view('elearning.materi.basic');
+});
+
+Route::get('/elearning/materi/materi-advanced', function () {
+    return view('elearning.materi.advanced');
+});
+
 Route::middleware('auth')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
 

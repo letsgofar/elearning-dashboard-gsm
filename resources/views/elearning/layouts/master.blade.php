@@ -22,6 +22,8 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
 
+    <link rel="stylesheet" href="{{asset('/assets/elearning/assets/css/purple.css')}}">
+
     <!--icon-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--icon-->
@@ -250,9 +252,9 @@
                 </a>
                 <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="/module/special">Halaman Utama</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/module/basic">Berita GSM</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/module/advanced">Persebaran GSM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/elearning/home">Halaman Utama</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/elearning/berita-gsm">Berita GSM</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/elearning/persebaran-gsm">Persebaran GSM</a></li>
                 </ul>
                 </div>
             </li>
@@ -264,8 +266,8 @@
                 </a>
                 <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="/raport/raportuser/newraportuser">Rincian Profil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/raport/raportsekolah/newraportsekolah">Ubah Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/elearning/rincian-profil">Rincian Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/elearning/ubah-profil">Ubah Profil</a></li>
                 </ul>
                 </div>
             </li>
@@ -277,9 +279,9 @@
                 </a>
                 <div class="collapse" id="icons">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="/sekolah/sekolahgsm">Materi Special</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/sekolah/e-model">Level Basic</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/sekolah/jejaring">Level Advanced</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/elearning/materi/materi-special">Materi Special</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/elearning/materi/materi-basic">Level Basic</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/elearning/materi/materi-advanced">Level Advanced</a></li>
                 </ul>
                 </div>
             </li>
