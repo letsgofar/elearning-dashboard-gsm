@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>GSM Admin</title>
+    <title>E-learning GSM</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/feather/feather.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/ti-icons/css/themify-icons.css')}}">
@@ -19,6 +19,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('/assets/css/vertical-layout-light/style.css')}}">
     <link rel="stylesheet" href="{{asset('/assets/css/vertical-layout-light/chardinjs.css')}}">
+	<link rel="stylesheet" href="{{asset('/assets/elearning/assets/css/mainpage.css')}}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
 
@@ -132,7 +133,7 @@
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         <nav id="top-nav" class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div id="logoweb" class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" data-intro="Selamat datang di website Dashboard Admin GSM, Yuk kita tur dulu!" data-position="bottom" >
+        <div id="logoweb" class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center" data-intro="Selamat datang di website E-learning GSM, Yuk kita tur dulu!" data-position="bottom" >
             <a class="navbar-brand brand-logo mr-5" href="/"><img src="{{asset('assets/elearning/assets/images/origsm.png')}}" class="mr-2" alt="logo"/></a>
             <a class="navbar-brand brand-logo-mini" href="/"><img src="{{asset('assets/images/small-icon.png')}}" alt="logo"/></a>
         </div>
@@ -248,7 +249,7 @@
         </div>
         <!-- partial -->
         <!-- partial:partials/_sidebar.html -->
-        <nav style="z-index:1000;" class="sidebar sidebar-offcanvas" id="sidebar" data-intro="Menu berupa kumpulan kegiatan yang bisa Admin lakukan ~" data-position="right" >
+        <nav style="z-index:1000;" class="sidebar sidebar-offcanvas" id="sidebar" data-intro="Menu berupa kumpulan kegiatan yang bisa user lakukan ~" data-position="right" >
             <ul class="nav">
             <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -317,7 +318,7 @@
             <!-- partial:partials/_footer.html -->
             <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021 from Team GSM. All rights reserved.</span>
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 from Team GSM. All rights reserved.</span>
             </div>
             </footer>
             <!-- partial -->

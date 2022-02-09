@@ -1,0 +1,162 @@
+.elearningBg{
+	background-image:url('../images/agsquarebiru.png') !important;
+	background-repeat:repeat;
+}
+
+.text-center.mt-4.subItem{
+	font-family: Tahoma, Verdana, sans-serif !important;
+	font-size: 20px !important;
+	color:white;
+	font-weight:bold;
+}
+
+.text-center.descItem{
+	font-family: Tahoma, Verdana, sans-serif !important;
+	font-size: 15px !important;
+	color:white;
+}
+
+#support-trigger{
+	background: #b8dff6;
+}
+
+#settings-trigger{
+	background: #b8dff6;
+}
+
+.prinsip{
+	background-color:#3871bc;
+	padding-top:75px;
+	padding-bottom:100px;
+	border-radius:0 0 30px 30px;
+	justify-content:center;
+}
+.d-flex.justify-content-center.animateImage:hover{
+	transform:scale(1.3);
+}
+.d-flex.justify-content-center.animateImage{
+	transition: transform 0.8s;
+}
+#konstektualDesc p, #sentraDesc p, #posDesc p, #charaDesc p{
+	font-size: 11px !important;
+}
+
+#konstektualDesc:hover, #sentraDesc:hover, #posDesc:hover, #charaDesc:hover{
+	transform:scale(1.2);
+}
+#konstektualImage, #sentraImage, #posImage, #charaImage{
+	transition:transform 0.8s;
+}
+#konstektualDesc, #sentraDesc, #posDesc, #charaDesc{
+	text-align:center;
+	font-family: Tahoma, Verdana, sans-serif !important;
+	padding-top:0%;
+	font-weight:bolder;
+	color:#3871bc;
+}
+.prinsip >.text-center.h2{
+	width:50% !important;
+	background-color:white !important;
+	padding-top:8px;
+	padding-bottom:8px;
+	margin:auto;
+	font-family: Tahoma, Verdana, sans-serif !important;
+	font-weight:bolder;
+	border-radius:15px;
+}
+
+.prinsip >.text-center.h4{
+	padding-top:15px;
+	padding-bottom:5px;
+	margin:auto;
+}
+
+.containerPrinsip{
+	  width:1000px;
+	  height:600px;
+	  display:grid;
+	  grid-template-columns: 230px 230px 230px 230px;
+	  grid-template-rows: 300px 300px;
+	  grid-column-gap: 20px;
+	  grid-row-gap: 20px;
+	  margin:auto;
+}
+
+.row.mt-5.boxPrinsip{
+	padding:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+	transition: all 0.6s ease-in;
+}
+
+.gambarPrinsip{
+	width:100%;
+	max-width:200px;
+	height:auto;
+}
+
+.descPrinsip{
+	background-color:white;
+	border-radius:10px;
+	height:100px;
+	width:100%;
+	max-width:200px;
+}
+
+@media only screen and (max-width :1230px){
+	.containerPrinsip{
+		  width:300px;
+		  height:300px;
+		  display:grid;
+		  grid-template-columns: 60px 60px 60px 60px;
+		  grid-template-rows: 150px 150px;
+		  grid-column-gap: 10px;
+		  grid-row-gap: 10px;
+		  margin:auto;
+	}
+	.gambarPrinsip{
+		width:100%;
+		max-width:100px;
+		height:auto;
+	}
+	.row.mt-5.boxPrinsip{
+		padding:10px;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		font-size:9px !important;
+	}
+	#konstektualDesc p{
+	text-align:center;
+	font-family: Tahoma, Verdana, sans-serif !important;
+	padding-top:0%;
+	color:#3871bc;
+	font-weight:lighter;
+	font-size:7px !important;
+	}
+	#sentraDesc p{
+	text-align:center;
+	font-family: Tahoma, Verdana, sans-serif !important;
+	padding-top:0%;
+	color:#3871bc;
+	font-weight:lighter;
+	font-size:7px !important;
+	}
+	#posDesc p{
+	text-align:center;
+	font-family: Tahoma, Verdana, sans-serif !important;
+	padding-top:0%;
+	color:#3871bc;
+	font-weight:lighter;
+	font-size:7px !important;
+	}
+	#charaDesc p{
+	text-align:center;
+	font-family: Tahoma, Verdana, sans-serif !important;
+	padding-top:0%;
+	color:#3871bc;
+	font-weight:lighter;
+	font-size:7px !important;
+	}
+ }
