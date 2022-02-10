@@ -16,19 +16,21 @@
 	color:white;
 }
 
-#support-trigger{
-	background: #b8dff6;
-}
-
+#support-trigger,
 #settings-trigger{
 	background: #b8dff6;
+	border: 2px solid #7600cf;
+}
+
+#support-trigger-i,
+#settings-trigger-i{
+	color:#7600cf !important;
 }
 
 .prinsip{
 	background-color:#3871bc;
 	padding-top:75px;
 	padding-bottom:100px;
-	border-radius:0 0 30px 30px;
 	justify-content:center;
 }
 .d-flex.justify-content-center.animateImage:hover{
@@ -37,24 +39,7 @@
 .d-flex.justify-content-center.animateImage{
 	transition: transform 0.8s;
 }
-#konstektualDesc p, #sentraDesc p, #posDesc p, #charaDesc p{
-	font-size: 11px !important;
-}
-
-#konstektualDesc:hover, #sentraDesc:hover, #posDesc:hover, #charaDesc:hover{
-	transform:scale(1.2);
-}
-#konstektualImage, #sentraImage, #posImage, #charaImage{
-	transition:transform 0.8s;
-}
-#konstektualDesc, #sentraDesc, #posDesc, #charaDesc{
-	text-align:center;
-	font-family: Tahoma, Verdana, sans-serif !important;
-	padding-top:0%;
-	font-weight:bolder;
-	color:#3871bc;
-}
-.prinsip >.text-center.h2{
+.prinsip >.text-center.h2, .fitur >.text-center.h2{
 	width:50% !important;
 	background-color:white !important;
 	padding-top:8px;
@@ -63,6 +48,32 @@
 	font-family: Tahoma, Verdana, sans-serif !important;
 	font-weight:bolder;
 	border-radius:15px;
+}
+
+#fiturImg{
+	border-radius:30px;
+	max-width:150px;
+	width:100%;
+}
+
+.descFitur{
+	border-radius:5px;
+	max-width:200px;
+	width:100%;
+	margin:auto;
+	background-color:rgba(192,223,255,0.6);
+	height:120px;
+	padding-top:5%;
+	padding-left:2%;
+	padding-right:2%;
+}
+
+.containerFitur{
+	background-color:#fff;
+	padding-top: 15px;
+	width:100%;
+	margin:auto;
+	border-radius:20px;
 }
 
 .prinsip >.text-center.h4{
@@ -75,7 +86,7 @@
 	  width:1000px;
 	  height:600px;
 	  display:grid;
-	  grid-template-columns: 230px 230px 230px 230px;
+	  grid-template-columns: 470px 470px;
 	  grid-template-rows: 300px 300px;
 	  grid-column-gap: 20px;
 	  grid-row-gap: 20px;
@@ -94,6 +105,28 @@
 	width:100%;
 	max-width:200px;
 	height:auto;
+	transition:all 1s;
+	display:block;
+}
+
+.gambarPrinsip:hover{
+	transform:scale(1.2);
+}
+
+#prinsip1:hover + .gambarhover1{
+	opacity:1;
+}
+
+#prinsip2:hover + .gambarhover2{
+	opacity:1;
+}
+
+#prinsip3:hover + .gambarhover3{
+	opacity:1;
+}
+
+#prinsip4:hover + .gambarhover4{
+	opacity:1;
 }
 
 .descPrinsip{
@@ -104,12 +137,84 @@
 	max-width:200px;
 }
 
+.gambarhover1{
+	  position: absolute;
+	  bottom: -5%;
+	  background: rgba(134, 166, 255, 1);
+	  color: #fff;
+	    -webkit-text-stroke-width: 0.5px;
+		-webkit-text-stroke-color: #000;
+	  width: 90%;
+	  transition: .5s ease;
+	  font-weight:bolder !important;
+	  opacity:0;
+	  font-size: 20px;
+	  padding: 20px;
+	  text-align: center;
+	  border-radius:20px;
+	  font-family:tahoma;
+}
+
+.gambarhover2{
+	  position: absolute;
+	  bottom: -5%;
+	  background: rgba(235, 142, 25, 1);
+	  color: #fff;
+	    -webkit-text-stroke-width: 0.5px;
+		-webkit-text-stroke-color: #000;
+	  width: 90%;
+	  transition: .5s ease;
+	  font-weight:bolder !important;
+	  opacity:0;
+	  font-size: 15px;
+	  padding: 20px;
+	  text-align: center;
+	  border-radius:20px;
+	  font-family:tahoma;
+}
+
+.gambarhover3{
+	  position: absolute;
+	  bottom: -5%;
+	  background: rgba(164, 1, 193, 1);
+	  color: #fff;
+	    -webkit-text-stroke-width: 0.3px;
+		-webkit-text-stroke-color: #000;
+	  width: 90%;
+	  transition: .5s ease;
+	  font-weight:bolder !important;
+	  opacity:0;
+	  font-size: 15px;
+	  padding: 20px;
+	  text-align: center;
+	  border-radius:20px;
+	  font-family:tahoma;
+}
+
+.gambarhover4{
+	  position: absolute;
+	  bottom: -5%;
+	  background: rgba(49, 213, 130, 1);
+	  color: #fff;
+	    -webkit-text-stroke-width: 0.3px;
+		-webkit-text-stroke-color: #000;
+	  width: 90%;
+	  transition: .5s ease;
+	  font-weight:bolder !important;
+	  opacity:0;
+	  font-size: 15px;
+	  padding: 20px;
+	  text-align: center;
+	  border-radius:20px;
+	  font-family:tahoma;
+}
+
 @media only screen and (max-width :1230px){
 	.containerPrinsip{
 		  width:300px;
 		  height:300px;
 		  display:grid;
-		  grid-template-columns: 60px 60px 60px 60px;
+		  grid-template-columns: 150px 150px;
 		  grid-template-rows: 150px 150px;
 		  grid-column-gap: 10px;
 		  grid-row-gap: 10px;
@@ -127,36 +232,56 @@
 		justify-content:center;
 		font-size:9px !important;
 	}
-	#konstektualDesc p{
-	text-align:center;
-	font-family: Tahoma, Verdana, sans-serif !important;
-	padding-top:0%;
-	color:#3871bc;
-	font-weight:lighter;
-	font-size:7px !important;
+	.gambarhover1{
+	  position: absolute;
+	  bottom: -2%;
+	  background: rgba(134, 166, 255, 1);
+	  color: #fff;
+	  width: 90%;
+	  transition: .5s ease;
+	  opacity:0;
+	  font-size: 12px;
+	  padding: 5px;
+	  text-align: center;
+	  border-radius:10px;
 	}
-	#sentraDesc p{
-	text-align:center;
-	font-family: Tahoma, Verdana, sans-serif !important;
-	padding-top:0%;
-	color:#3871bc;
-	font-weight:lighter;
-	font-size:7px !important;
+	.gambarhover2{
+	  position: absolute;
+	  bottom: -2%;
+	  background: rgba(235, 142, 25, 1);
+	  color: #fff;
+	  width: 90%;
+	  transition: .5s ease;
+	  opacity:0;
+	  font-size: 11px;
+	  padding: 5px;
+	  text-align: center;
+	  border-radius:10px;
 	}
-	#posDesc p{
-	text-align:center;
-	font-family: Tahoma, Verdana, sans-serif !important;
-	padding-top:0%;
-	color:#3871bc;
-	font-weight:lighter;
-	font-size:7px !important;
+	.gambarhover3{
+	  position: absolute;
+	  bottom: -2%;
+	  background: rgba(164, 1, 193, 1);
+	  color: #fff;
+	  width: 90%;
+	  transition: .5s ease;
+	  opacity:0;
+	  font-size: 8px;
+	  padding: 5px;
+	  text-align: center;
+	  border-radius:10px;
 	}
-	#charaDesc p{
-	text-align:center;
-	font-family: Tahoma, Verdana, sans-serif !important;
-	padding-top:0%;
-	color:#3871bc;
-	font-weight:lighter;
-	font-size:7px !important;
+		.gambarhover4{
+	  position: absolute;
+	  bottom: -2%;
+	  background: rgba(49, 213, 130, 1);
+	  color: #fff;
+	  width: 90%;
+	  transition: .5s ease;
+	  opacity:0;
+	  font-size: 10px;
+	  padding: 5px;
+	  text-align: center;
+	  border-radius:10px;
 	}
  }
