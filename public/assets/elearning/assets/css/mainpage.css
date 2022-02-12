@@ -285,3 +285,68 @@
 	  border-radius:10px;
 	}
  }
+
+ /* _____________ tambahan sidebar ___________________*/
+.sidebar .nav .nav-item.active > .nav-link i, .sidebar .nav .nav-item.active > .nav-link .menu-title, .sidebar .nav .nav-item.active > .nav-link .menu-arrow {
+    color: #fff;
+}
+.sidebar .nav .nav-item:not(.active) > .nav-link i, .sidebar .nav .nav-item:not(.active) > .nav-link .menu-title, .sidebar .nav .nav-item:not(.active) > .nav-link .menu-arrow {
+    color: #717171;
+}
+.sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {
+    border-radius: 0 0 0 0;
+    background: #ffffff;
+    color: #717171;
+}
+
+.sidebar .nav:not(.sub-menu) > .nav-item.active > .nav-link[aria-expanded="true"] {
+    border-radius: 0 0 0 0;
+    background: #2179c5;
+    color: #fff;
+}
+
+.sidebar .nav:not(.sub-menu) >.nav-item > .nav-link[aria-expanded="true"]::before {
+    border-radius: 0 0 0 0;
+    background: #2179c5;
+    color: #fff;
+}
+
+.sidebar .nav:not(.sub-menu) > .nav-item.active > .nav-link.collapsed[aria-expanded="false"] {
+    border-radius: 0 0 0 0;
+    background: #2179c5;
+    color: #fff;
+}
+
+.sidebar .nav > .nav-item.active.active2 > .nav-link.active{
+	background: #2179c5;
+    color: #fff;
+}
+
+@media (min-width: 992px){
+.sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link:hover .menu-title {
+    background: #aed9ff;
+    color: #0b72af;
+}
+}
+.sidebar .nav.sub-menu .nav-item .nav-link.active {
+    color: #ffffff;
+    background: #4fbeff;
+}
+.sidebar .nav.sub-menu .nav-item .nav-link:hover {
+	background:#aed9ff;
+	color:#0b72af;
+}
+.sidebar .nav:not(.sub-menu) > .nav-item > .nav-link:hover {
+    background:#aed9ff;
+	color:#0b72af;
+}
+.sidebar .nav.sub-menu {
+    background: #d6ecff;
+}
+.sidebar .nav:not(.sub-menu) > .nav-item.active {
+	background: #2179c5;
+}
+
+.sidebar .nav.sub-menu .nav-item:hover {
+    background: #d6ecff;
+}
