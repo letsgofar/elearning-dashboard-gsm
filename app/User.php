@@ -13,6 +13,11 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function shares()
+    {
+        return $this->hasMany(Share::class);
+    }
+
     use Notifiable;
 
     /**

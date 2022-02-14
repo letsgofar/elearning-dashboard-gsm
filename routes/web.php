@@ -20,37 +20,33 @@ Route::get('/elearning/berita-gsm', function () {
     return view('elearning.home.berita-gsm');
 });
 
-Route::get('/elearning/persebaran-gsm', function () {
-    return view('elearning.home.persebaran-gsm');
-});
+// Route::get('/elearning/persebaran-gsm', function () {
+//     return view('elearning.home.persebaran-gsm');
+// });
+
+Route::get('/elearning/persebaran-gsm', 'SchoolController@persebaran')->name('persebaran');
 
 Route::get('/elearning/rincian-profil', function () {
-    return view('elearning.profile.rincian-profil');
+    $users = auth()->user();
+    return view('elearning.profile.rincian-profil', ['users' => $users]);
 });
 
 Route::get('/elearning/ubah-profil', function () {
     return view('elearning.profile.ubah-profil');
 });
 
-Route::get('/elearning/materi/materi-special', function () {
-    return view('elearning.materi.special');
-});
+Route::get('/elearning/materi/materi-special', 'ModuleController@materispecial')->name('materi-special');
+Route::get('/elearning/materi/materi-special/{modules:slug}', 'ModuleController@detailspecial')->name('module.special.detail');
+Route::get('/elearning/materi/materi-basic', 'ModuleController@materibasic')->name('materi-basic');
+Route::get('/elearning/materi/materi-basic/{modules:slug}', 'ModuleController@detailbasic')->name('module.basic.detail');
+Route::get('/elearning/materi/materi-advanced', 'ModuleController@materiadvanced')->name('materi-advanced');
+Route::get('/elearning/materi/materi-advanced/{modules:slug}', 'ModuleController@detailadvanced')->name('module.advanced.detail');
 
-Route::get('/elearning/materi/materi-basic', function () {
-    return view('elearning.materi.basic');
-});
 
-Route::get('/elearning/materi/materi-advanced', function () {
-    return view('elearning.materi.advanced');
-});
+Route::get('/elearning/berbagi/buat-konten-berbagi', 'ShareController@create')->name('share.create');
+Route::post('/elearning/berbagi/buat-konten-berbagi', 'ShareController@store')->name('share.store');
+Route::get('/elearning/berbagi/lini-masa-berbagi', 'ShareController@index')->name('share.index');
 
-Route::get('/elearning/berbagi/buat-konten-berbagi', function () {
-    return view('elearning.berbagi.buat-konten-berbagi');
-});
-
-Route::get('/elearning/berbagi/lini-masa-berbagi', function () {
-    return view('elearning.berbagi.lini-masa-berbagi');
-});
 
 Route::middleware('auth')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');

@@ -39,6 +39,37 @@ class ModuleController extends Controller
         return view('dashboard.module.moduleadvanced', ['advanceds' => $advanced]);
     }
 
+    //elearning
+    public function materispecial()
+    {
+        $special = Module::where('level_id', 1)->latest()->paginate(5);
+        return view('elearning.materi.special', ['specials' => $special]);
+    }
+    public function materibasic()
+    {
+        $basic = Module::where('level_id', 2)->latest()->paginate(5);
+        return view('elearning.materi.basic', ['basics' => $basic]);
+    }
+    public function materiadvanced()
+    {
+        $advanced = Module::where('level_id', 3)->latest()->paginate(5);
+        return view('elearning.materi.advanced', ['advanceds' => $advanced]);
+    }
+
+
+    //elearning
+    public function detailspecial(Module $modules)
+    {
+        return view('elearning.materi.special-detail', ['modules' => $modules]);
+    }
+    public function detailbasic(Module $modules)
+    {
+        return view('elearning.materi.basic-detail', ['modules' => $modules]);
+    }
+    public function detailadvanced(Module $modules)
+    {
+        return view('elearning.materi.advanced-detail', ['modules' => $modules]);
+    }
     /**
      * Show the form for creating a new resource.
      *

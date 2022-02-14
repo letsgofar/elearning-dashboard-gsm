@@ -20,19 +20,19 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label class="font-weight-bold">Nama :</label>
-                                        <p>Arga Wirawan</p>
+                                        <p>{{ $users->name }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Tempat Lahir :</label>
-                                        <p>Sukoharjo</p>
+                                        <p>{{ $users->email }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Tanggal Lahir :</label>
-                                        <p>06/07/1997</p>
+                                        <p>{{ $users->jabatan }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Nomor WA :</label>
-                                        <p>082144722631</p>
+                                        <p>{{ $users->sekolah }}</p>
                                     </div>
                                 </div>
                             </div>
