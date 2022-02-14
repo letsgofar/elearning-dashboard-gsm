@@ -352,6 +352,7 @@
     <script src="{{asset('/assets/js/webguide.js')}}"></script>
     <script src="{{asset('/assets/js/chardinjs.min.js')}}"></script>
     <script src="{{asset('/assets/js/Chart.roundedBarCharts.js')}}"></script>
+    <script src="{{asset('/assets/js/file-upload.js')}}"></script>
     <!-- End custom js for this page-->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- Optional JavaScript; choose one of the two! -->

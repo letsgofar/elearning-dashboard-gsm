@@ -41,6 +41,13 @@ class SchoolController extends Controller
         return view('dashboard.school.sekolahindonesia', ['indonesias' => $indonesias]);
     }
 
+    //elearning
+    public function persebaran()
+    {
+        $models = School::where('label_id', 1)->latest()->paginate(5);
+        return view('elearning.home.persebaran-gsm', ['models' => $models]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -89,6 +96,7 @@ class SchoolController extends Controller
     {
         return view('dashboard.school.sekolahindonesiadetail', ['schools' => $schools]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
