@@ -74,7 +74,7 @@
                             <ul class="nav navbar-nav navbar-right pull-right" style="margin:20px;">
                                 <li style="color:white;letter-spacing: 1px" class="dropdown top-menu-item-xs"> <b> <a  href="{{ url('/login') }}" style="color:rgb(15, 68, 155 )"> Masuk</a></b></li>
                                 <li style="color:white;letter-spacing: 1px" class="dropdown top-menu-item-xs"> <b> <span style="color:white"> &nbsp;&nbsp; | &nbsp;&nbsp; </span></b></li>
-                                <li style="color:white;letter-spacing: 1px" class="dropdown top-menu-item-xs"> <b> <a  href="{{ url('/daftar') }}" style="color:rgb(15, 68, 155 )"> Daftar</a></b></li>
+                                <li style="color:white;letter-spacing: 1px" class="dropdown top-menu-item-xs"> <b> <a  href="{{ url('/register') }}" style="color:rgb(15, 68, 155 )"> Daftar</a></b></li>
                             </ul>
                     </div>
                 </div>
