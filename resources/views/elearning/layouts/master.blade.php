@@ -306,7 +306,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{url('/elearning/pendampingan')}}">
                 <i class="ti-id-badge menu-icon"></i>
                 <span class="menu-title">Pendampingan</span>
                 </a>
