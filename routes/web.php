@@ -54,6 +54,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/elearning/berbagi/buat-konten-berbagi', 'ShareController@store')->name('share.store');
     Route::get('/elearning/berbagi/lini-masa-berbagi', 'ShareController@index')->name('share.index');
 
+    Route::get('/elearning/pendampingan', 'PendampinganController@index')->name('pendampingan.index');
+
     // ********** ROUTE FOR E-LEARNING ********** //
 
 
