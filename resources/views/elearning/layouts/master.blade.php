@@ -259,7 +259,7 @@
                 </a>
                 <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="/elearning/home">Halaman Utama</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/home">Halaman Utama</a></li>
                     <li class="nav-item"><a class="nav-link" href="/elearning/berita-gsm">Berita GSM</a></li>
                     <li class="nav-item"><a class="nav-link" href="/elearning/persebaran-gsm">Persebaran GSM</a></li>
                 </ul>

@@ -8,48 +8,56 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/elearning', function () {
+Route::get('/', function () {
     return view('elearning.index');
 });
 
-Route::get('/elearning/home', function () {
-    return view('elearning.home.index');
-});
-
-Route::get('/elearning/berita-gsm', function () {
-    return view('elearning.home.berita-gsm');
-});
-
-// Route::get('/elearning/persebaran-gsm', function () {
-//     return view('elearning.home.persebaran-gsm');
-// });
-
-Route::get('/elearning/persebaran-gsm', 'SchoolController@persebaran')->name('persebaran');
-
-Route::get('/elearning/rincian-profil', function () {
-    $users = auth()->user();
-    return view('elearning.profile.rincian-profil', ['users' => $users]);
-});
-
-Route::get('/elearning/ubah-profil', function () {
-    return view('elearning.profile.ubah-profil');
-});
-
-Route::get('/elearning/materi/materi-special', 'ModuleController@materispecial')->name('materi-special');
-Route::get('/elearning/materi/materi-special/{modules:slug}', 'ModuleController@detailspecial')->name('module.special.detail');
-Route::get('/elearning/materi/materi-basic', 'ModuleController@materibasic')->name('materi-basic');
-Route::get('/elearning/materi/materi-basic/{modules:slug}', 'ModuleController@detailbasic')->name('module.basic.detail');
-Route::get('/elearning/materi/materi-advanced', 'ModuleController@materiadvanced')->name('materi-advanced');
-Route::get('/elearning/materi/materi-advanced/{modules:slug}', 'ModuleController@detailadvanced')->name('module.advanced.detail');
-
-
-Route::get('/elearning/berbagi/buat-konten-berbagi', 'ShareController@create')->name('share.create');
-Route::post('/elearning/berbagi/buat-konten-berbagi', 'ShareController@store')->name('share.store');
-Route::get('/elearning/berbagi/lini-masa-berbagi', 'ShareController@index')->name('share.index');
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', 'HomeController@index')->name('home');
+    // Route::get('/', 'HomeController@index')->name('home');
+
+
+    // ********** ROUTE FOR E-LEARNING ********** //
+    Route::get('/home', function () {
+        return view('elearning.home.index');
+    });
+
+    Route::get('/elearning/berita-gsm', function () {
+        return view('elearning.home.berita-gsm');
+    });
+
+    // Route::get('/elearning/persebaran-gsm', function () {
+    //     return view('elearning.home.persebaran-gsm');
+    // });
+
+    Route::get('/elearning/persebaran-gsm', 'SchoolController@persebaran')->name('persebaran');
+
+    Route::get('/elearning/rincian-profil', function () {
+        $users = auth()->user();
+        return view('elearning.profile.rincian-profil', ['users' => $users]);
+    });
+
+    Route::get('/elearning/ubah-profil', function () {
+        return view('elearning.profile.ubah-profil');
+    });
+
+    Route::get('/elearning/materi/materi-special', 'ModuleController@materispecial')->name('materi-special');
+    Route::get('/elearning/materi/materi-special/{modules:slug}', 'ModuleController@detailspecial')->name('module.special.detail');
+    Route::get('/elearning/materi/materi-basic', 'ModuleController@materibasic')->name('materi-basic');
+    Route::get('/elearning/materi/materi-basic/{modules:slug}', 'ModuleController@detailbasic')->name('module.basic.detail');
+    Route::get('/elearning/materi/materi-advanced', 'ModuleController@materiadvanced')->name('materi-advanced');
+    Route::get('/elearning/materi/materi-advanced/{modules:slug}', 'ModuleController@detailadvanced')->name('module.advanced.detail');
+
+
+    Route::get('/elearning/berbagi/buat-konten-berbagi', 'ShareController@create')->name('share.create');
+    Route::post('/elearning/berbagi/buat-konten-berbagi', 'ShareController@store')->name('share.store');
+    Route::get('/elearning/berbagi/lini-masa-berbagi', 'ShareController@index')->name('share.index');
+
+    // ********** ROUTE FOR E-LEARNING ********** //
+
+
+    // ********** ROUTE FOR DASHBOARD ********** //
 
     // ******ROUTE FOR MODULE******* //
     Route::get('/module/create', 'ModuleController@create')->name('module.create');
@@ -129,8 +137,10 @@ Route::middleware('auth')->group(function () {
     Route::get('request/permintaansekolah', 'RequestController@sekolahmodelindex')->name('requestsekolahmodel.index');
     Route::patch('request/{schools:slug}/accept', 'RequestController@sekolahmodelupdate')->name('requestschool.accept');
     Route::patch('request/{users:slug}', 'RequestController@mentorupdate')->name('requestmentor.accept');
+
+    // ********** ROUTE FOR DASHBOARD ********** //
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
