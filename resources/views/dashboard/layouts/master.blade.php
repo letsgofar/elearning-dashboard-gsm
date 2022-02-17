@@ -243,7 +243,7 @@
         <nav style="z-index:1000;" class="sidebar sidebar-offcanvas" id="sidebar" data-intro="Menu berupa kumpulan kegiatan yang bisa Admin lakukan ~" data-position="right" >
             <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="/dashboard/home">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">Home</span>
                 </a>
