@@ -8,12 +8,51 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+	/**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+  
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function guruHome()
+    {
+        return view('elearning.home.index');
+    }
+  
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function adminHome()
+    {
+		$sekolahmodel = School::where('label_id', 1)->count();
+        $sekolahjejaring = School::where('label_id', 3)->count();
+        $mentor = User::where('role_id', 2)->count();
+        $guru = User::where('role_id', 3)->count();
+        return view('dashboard.index', [
+            'model' => $sekolahmodel,
+            'jejaring' => $sekolahjejaring,
+            'mentor' => $mentor,
+            'guru' => $guru,
+        ]);
+        return view('dashboard.index');
+		}
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    /*public function index()
     {
         $sekolahmodel = School::where('label_id', 1)->count();
         $sekolahjejaring = School::where('label_id', 3)->count();
@@ -26,7 +65,7 @@ class HomeController extends Controller
             'guru' => $guru,
         ]);
     }
-
+	*/
     /**
      * Show the form for creating a new resource.
      *

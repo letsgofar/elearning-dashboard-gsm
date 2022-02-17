@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 
-
+Route::get('dashboard/home', [HomeController::class, 'adminHome'])->name('dashboard.home')->middleware('role_id');
+Route::get('elearning/home', [HomeController::class, 'guruHome'])->name('elearning.home')->middleware('role_id');
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
