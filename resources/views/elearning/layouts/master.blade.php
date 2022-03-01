@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>E-learning GSM</title>
+	@auth
+	<meta name="user_id" content="{{ auth()->user()->id }}">
+	@endauth
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/feather/feather.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/ti-icons/css/themify-icons.css')}}">
@@ -36,98 +39,6 @@
     <!--icon-->
     @include('dashboard.layouts.style')
 
-    <!-- UNTUK CHART -->
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-
-      // Load the Visualization API and the corechart package.
-    google.charts.load('current', {'packages':['corechart']});
-
-    // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawChart1);
-	google.charts.setOnLoadCallback(drawChart2);
-	google.charts.setOnLoadCallback(drawChart3);
-
-    // Callback that creates and populates a data table,
-    // instantiates the pie chart, passes in the data and
-    // draws it.
-    function drawChart1() {
-
-    // Create the data table.
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Topping');
-    data.addColumn('number', 'Slices');
-    data.addRows([
-        ['Mushrooms', 3],
-        ['Onions', 1],
-        ['Olives', 1],
-        ['Zucchini', 1],
-        ['Pepperoni', 2]
-    ]);
-
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-        'width':400,
-        'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div1'));
-        chart.draw(data, options);
-        }
-
-		function drawChart2() {
-
-    // Create the data table.
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Topping');
-    data.addColumn('number', 'Slices');
-    data.addRows([
-        ['Mushrooms', 2],
-        ['Onions', 2],
-        ['Olives', 2],
-        ['Zucchini', 1],
-        ['Pepperoni', 1]
-    ]);
-
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-        'width':400,
-        'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
-        chart.draw(data, options);
-        }
-
-		function drawChart3() {
-
-    // Create the data table.
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Topping');
-    data.addColumn('number', 'Slices');
-    data.addRows([
-        ['Mushrooms', 1],
-        ['Onions', 2],
-        ['Olives', 1],
-        ['Zucchini', 3],
-        ['Pepperoni', 1]
-    ]);
-
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-        'width':400,
-        'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div3'));
-        chart.draw(data, options);
-        }
-    </script>
-
-    <!-- UNTUK CHART -->
-
-
 </head>
 <body data-chardin-sequenced="true" data-chardin-auto="false" data-chardin-delay="800">
     <div class="container-scroller">
@@ -154,11 +65,12 @@
             </li>
             </ul>
             <ul class="navbar-nav navbar-nav-right">
-            <li class="nav-item dropdown">
-                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="icon-bell mx-0"></i>
-                <span class="count"></span>
-                </a>
+            <li class="nav-item">
+				<a href="" class="nav-link" :badge="notif">
+					<svg class="svg-icon" viewBox="0 0 20 20">
+						<path d="M14.38,3.467l0.232-0.633c0.086-0.226-0.031-0.477-0.264-0.559c-0.229-0.081-0.48,0.033-0.562,0.262l-0.234,0.631C10.695,2.38,7.648,3.89,6.616,6.689l-1.447,3.93l-2.664,1.227c-0.354,0.166-0.337,0.672,0.035,0.805l4.811,1.729c-0.19,1.119,0.445,2.25,1.561,2.65c1.119,0.402,2.341-0.059,2.923-1.039l4.811,1.73c0,0.002,0.002,0.002,0.002,0.002c0.23,0.082,0.484-0.033,0.568-0.262c0.049-0.129,0.029-0.266-0.041-0.377l-1.219-2.586l1.447-3.932C18.435,7.768,17.085,4.676,14.38,3.467 M9.215,16.211c-0.658-0.234-1.054-0.869-1.014-1.523l2.784,0.998C10.588,16.215,9.871,16.447,9.215,16.211 M16.573,10.27l-1.51,4.1c-0.041,0.107-0.037,0.227,0.012,0.33l0.871,1.844l-4.184-1.506l-3.734-1.342l-4.185-1.504l1.864-0.857c0.104-0.049,0.188-0.139,0.229-0.248l1.51-4.098c0.916-2.487,3.708-3.773,6.222-2.868C16.187,5.024,17.489,7.783,16.573,10.27"></path>
+					</svg>
+				</a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                 <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
                 <a class="dropdown-item preview-item">
@@ -204,13 +116,11 @@
             </li>
             <li id="profilUser" class="nav-item nav-profile dropdown" data-intro="Gunakan untuk logout dari Web" data-position="bottom">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                <img src="{{asset('assets/images/faces/face28.jpg')}}" alt="profile"/>
+					@if(Auth::user()->avatar)
+						 <img class="image rounded-circle" src="{{asset('/storage/avatar/'.Auth::user()->avatar)}}" alt="profile_image" style="width: 55px;height: 55px; padding: 10px; margin: 0px; ">
+					@endif
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                <a class="dropdown-item">
-                    <i class="ti-settings text-primary"></i>
-                    Settings
-                </a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -305,7 +215,7 @@
                 </ul>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="linkSpesial">
                 <a class="nav-link" href="{{url('/elearning/pendampingan')}}">
                 <i class="ti-id-badge menu-icon"></i>
                 <span class="menu-title">Pendampingan</span>

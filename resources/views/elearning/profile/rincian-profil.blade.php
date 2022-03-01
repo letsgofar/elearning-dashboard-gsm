@@ -13,26 +13,30 @@
                     </div>
                     <div class="row">
                         <div class="col-4">
-
+							<div class="profile-header-img d-flex justify-content-center">
+							@if(Auth::user()->avatar)
+								<img class="image rounded-circle" src="{{asset('/storage/avatar/'.Auth::user()->avatar)}}" style="width: 200px;height: 200px; padding: 10px; margin: 0px; ">
+							@endif
+							</div>
                         </div>
                         <div class="col-4">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label class="font-weight-bold">Nama :</label>
-                                        <p>{{ $users->name }}</p>
+                                        <p>{{ Auth::user()->name }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Tempat Lahir :</label>
-                                        <p>{{ $users->email }}</p>
+                                        <p>{{ Auth::user()->tempat_lahir}}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Tanggal Lahir :</label>
-                                        <p>{{ $users->jabatan }}</p>
+                                        <p>{{ Auth::user()->tanggal_lahir }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Nomor WA :</label>
-                                        <p>{{ $users->sekolah }}</p>
+                                        <p>{{ Auth::user()->hp }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -42,19 +46,19 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label class="font-weight-bold">Sudah Ikut Workshop :</label>
-                                        <p>Sudah Pernah</p>
+                                        <p>{{ Auth::user()->workshop }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Gender :</label>
-                                        <p>Pria</p>
+                                        <p>{{ Auth::user()->gender }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Posisi di Sekolah :</label>
-                                        <p>Guru</p>
+										<p>{{ Auth::user()->jabatan }}</p>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Pendidikan Terakhir :</label>
-                                        <p>S1</p>
+                                        <p>{{ Auth::user()->pendidikan_terakhir }}</p>
                                     </div>
                                 </div>
                             </div>

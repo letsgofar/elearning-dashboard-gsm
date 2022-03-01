@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{asset('/assets/elearning/assets/css/ubahprofil.css')}}">
 @extends('elearning.layouts.master')
 
 @section('content')
@@ -13,24 +14,35 @@
                     </div>
                     <div class="row">
                         <div class="col-4">
+						<form action="{{route('ubahdata')}}" method="POST" enctype="multipart/form-data" id="ubahDiri">
+						@csrf
                             <div class="card">
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label class="font-weight-bold">Nama Lengkap :</label>
                                         <div id="the-basics">
-                                            <input class="typeahead" type="text" placeholder="">
+                                            <input class="typeahead" type="text" placeholder="Isikan disini..." name="name">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Sudah Pernah Ikut Workshop GSM ?</label>
                                         <div id="the-basics">
-                                            <input class="typeahead" type="text" placeholder="">
+                                            <select id="workshop" name="workshop" form="ubahDiri">
+											  <option value="Sudah">Sudah</option>
+											  <option value="Belum">Belum</option>
+											</select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Pendidikan Terakhir :</label>
                                         <div id="the-basics">
-                                            <input class="typeahead" type="text" placeholder="">
+                                              <select id="pendidikan" name="pendidikan_terakhir" form="ubahDiri">
+											  <option value="SMA">SMA</option>
+											  <option value="Diploma">Diploma</option>
+											  <option value="Sarjana">Sarjana</option>
+											  <option value="Magister">Magister</option>
+											  <option value="Doktoral">Doktoral</option>
+											</select>
                                         </div>
                                     </div>
                                 </div>
@@ -42,19 +54,22 @@
                                     <div class="form-group">
                                         <label class="font-weight-bold">Tempat Lahir :</label>
                                         <div id="the-basics">
-                                            <input class="typeahead" type="text" placeholder="">
+                                            <input class="typeahead" type="text" placeholder="Isikan disini..." name="tempat_lahir">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Gender :</label>
                                         <div id="the-basics">
-                                            <input class="typeahead" type="text" placeholder="">
+                                            <select id="gender" name="gender" form="ubahDiri">
+											  <option value="pria">Pria</option>
+											  <option value="wanita">Wanita</option>
+											</select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Nomor WA/HP :</label>
                                         <div id="the-basics">
-                                            <input class="typeahead" type="text" placeholder="">
+                                            <input class="typeahead" type="text" placeholder="Isikan disini..." name="hp">
                                         </div>
                                     </div>
                                 </div>
@@ -66,19 +81,30 @@
                                     <div class="form-group">
                                         <label class="font-weight-bold">Tanggal Lahir :</label>
                                         <div id="the-basics">
-                                            <input class="typeahead" type="text" placeholder="">
+                                            <input class="typeahead" type="date" placeholder="" name="tanggal_lahir">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="font-weight-bold">Posisi di Sekolah :</label>
                                         <div id="the-basics">
-                                            <input class="typeahead" type="text" placeholder="">
+                                            <select id="jabatan" name="jabatan" form="ubahDiri">
+											  <option value="Kepala Sekolah">Kepala Sekolah</option>
+											  <option value="Guru">Guru</option>
+											  <option value="Administrasi">Administrasi</option>
+											</select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+							<div class="form-group">
+								<div class="d-flex justify-content-center">
+									<input type="submit" value="Submit">
+								</div>
+							</div>
                         </div>
-                    </div>
+						
+						</form>
+					</div>
                 </div>
             </div>
         </div>
@@ -90,11 +116,13 @@
                             Foto Profil Anda
                         </h3>
                     </div>
-                    <div class="row">
+                    <div class="row" style="padding-bottom:50px;">
                         <div class="col-4">
                             <div class="card">
-                                <div class="card-body">
-
+                                <div class="card-body d-flex justify-content-center">
+									@if(Auth::user()->avatar)
+										 <img class="image rounded-circle" src="{{asset('/storage/avatar/'.Auth::user()->avatar)}}" style="width: 150px;height: 150	px; padding: 10px; margin: 0px; ">
+									@endif
                                 </div>
                             </div>
                         </div>
@@ -104,16 +132,11 @@
                                     <div class="form-group">
                                         <label>Ubah Foto Profil</label>
                                         <p>Ukuran file tidak boleh melebihi 2MB</p>
-                                        <input type="file" name="img[]" class="file-upload-default">
-                                        <div class="input-group col-xs-12">
-                                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                                            <span class="input-group-append">
-                                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                            </span>
-                                        </div>
-                                        <div class="mt-4">
-                                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                                            <button class="btn btn-light">Cancel</button>
+											<form action="{{route('updatePhoto')}}" method="POST" enctype="multipart/form-data" style="padding-top:20px;">
+												@csrf
+												<input type="file" name="avatar">
+												<input type="submit" value="Upload">
+											</form>
                                         </div>
                                     </div>
                                 </div>
