@@ -337,7 +337,7 @@
     background: #4fbeff !important;
 }
 .sidebar .nav .nav-item.active > .nav-link {
-    background:#2179c5 !important;
+    background:#d6ecff !important;
 }
 .sidebar .nav.sub-menu .nav-item .nav-link:hover {
 	background:#aed9ff !important;
@@ -356,8 +356,4 @@
 
 .sidebar .nav.sub-menu .nav-item:hover {
     background: #d6ecff !important;
-}
-
-.sidebar .nav #linkSpesial.active > .nav-link {
-    background:#2179c5 !important;
 }

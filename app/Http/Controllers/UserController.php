@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Role;
 use App\User;
 use Illuminate\Http\Request;
-use Auth;
 
 class UserController extends Controller
 {
@@ -101,35 +100,5 @@ class UserController extends Controller
     {
         $users->delete();
         return redirect('user/listuser')->with('success', 'Data User berhasil dihapus !');
-    }
-	
-	public function profile(User $users)
-    {
-        return view('elearning.profile.rincian-profil',compact('users',$users));
-    }
-	
-	public function upload(Request $request)
-    {
-        if($request->hasFile('avatar')){
-            $filename = $request->avatar->getClientOriginalName();
-            $request->avatar->storeAs('avatar',$filename,'public');
-            Auth()->user()->update(['avatar'=>$filename]);
-        }
-        return redirect()->back()->with('success',' Foto telah diperbaharui!');
-    }
-	
-	public function ubah(Request $request)
-    {	
-		$users=auth()->user();
-        $users->name = $request->input('name');
-        $users->workshop = $request->input('workshop');
-        $users->pendidikan_terakhir = $request->input('pendidikan_terakhir');
-        $users->tempat_lahir = $request->input('tempat_lahir');
-		$users->tanggal_lahir = $request->input('tanggal_lahir');
-		$users->gender = $request->input('gender');
-		$users->hp = $request->input('hp');
-		$users->jabatan = $request->input('jabatan');
-        $users->update();
-        return redirect()->back()->with('success',' Data telah diperbaharui!');
     }
 }

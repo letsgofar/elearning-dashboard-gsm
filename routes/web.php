@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\User;
 
 
 Route::get('dashboard/home', [HomeController::class, 'adminHome'])->name('dashboard.home')->middleware('role_id');
@@ -37,15 +35,14 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/elearning/persebaran-gsm', 'SchoolController@persebaran')->name('persebaran');
 
-    Route::get('/elearning/rincian-profil','UserController@profile');
-	Route::post('/elearning/ubah-profil/photo','UserController@upload');
-	Route::post('ubahdata','UserController@ubah')->name('ubahdata');
-    Route::get('/elearning/ubah-profil/photo', function () {
-        return view('elearning.profile.ubah-profil');
-    })->name('updatePhoto');
+    Route::get('/elearning/rincian-profil', function () {
+        $users = auth()->user();
+        return view('elearning.profile.rincian-profil', ['users' => $users]);
+    });
+
     Route::get('/elearning/ubah-profil', function () {
         return view('elearning.profile.ubah-profil');
-    })->name('updateProfil');
+    });
 
     Route::get('/elearning/materi/materi-special', 'ModuleController@materispecial')->name('materi-special');
     Route::get('/elearning/materi/materi-special/{modules:slug}', 'ModuleController@detailspecial')->name('module.special.detail');

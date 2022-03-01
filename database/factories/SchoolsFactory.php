@@ -14,7 +14,7 @@ $factory->define(School::class, function (Faker $faker) {
         'nama' => $faker->sentence(2),
         'slug' => Str::slug($faker->sentence()),
         'alamat' => $faker->address,
-        'kecamatan' => $faker->kecamatan,
+        'kecamatan' => $faker->city,
         'kabupaten' => $faker->city,
         'provinsi' => $faker->state,
     ];
