@@ -46,7 +46,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card position-relative">
-                            <form action="{{ url('elearning/berbagi/buat-konten-berbagi/') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{route('share.store')}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label class="font-weight-bold">Judul</label>
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="font-weight-bold">Upload Foto</label>
-                                    <p>Tidak dapat mengupload foto dengan ukuran lebih dari 5MB</p>
+                                    <p>Tidak dapat mengupload foto dengan ukuran lebih dari 2MB</p>
                                     <input type="file" name="thumbnail" id="thumbnail" class="file-upload-default">
                                     <div class="input-group col-xs-12">
                                         <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">

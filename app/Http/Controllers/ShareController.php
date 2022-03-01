@@ -51,7 +51,7 @@ class ShareController extends Controller
 
         $attr['user_id'] = auth()->id();
         $thumbnail = request()->file('thumbnail');
-        $thumbnailUrl = $thumbnail->storeAs("images/photos", "{$slug}.{$thumbnail->extension()}");
+        $thumbnailUrl = $thumbnail->storeAs('/images/photos', "{$slug}.{$thumbnail->extension()}",'public');
         $attr['thumbnail'] = $thumbnailUrl;
 
         Share::create($attr);
