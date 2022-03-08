@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Module;
 use App\Raportuser;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -29,7 +31,13 @@ class RaportuserController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return view('dashboard.raport.user.create', ['categories' => $categories]);
+        $users = User::get();
+        $modules = Module::get();
+        return view('dashboard.raport.user.create', [
+            'categories' => $categories,
+            'users' => $users,
+            'modules' => $modules,
+        ]);
     }
 
     /**

@@ -37,14 +37,15 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/elearning/persebaran-gsm', 'SchoolController@persebaran')->name('persebaran');
 
-    Route::get('/elearning/rincian-profil','UserController@profile');
-	Route::post('/elearning/ubah-profil/photo','UserController@upload');
-	Route::post('ubahdata','UserController@ubah')->name('ubahdata');
+    Route::get('/elearning/rincian-profil', 'UserController@profile');
+    Route::post('/elearning/ubah-profil/photo', 'UserController@upload');
+    Route::post('ubahdata', 'UserController@ubah')->name('ubahdata');
     Route::get('/elearning/ubah-profil/photo', function () {
         return view('elearning.profile.ubah-profil');
     })->name('updatePhoto');
     Route::get('/elearning/ubah-profil', function () {
-        return view('elearning.profile.ubah-profil');
+        $data = User::get();
+        return view('elearning.profile.ubah-profil', ['profiles' => $data]);
     })->name('updateProfil');
 
     Route::get('/elearning/materi/materi-special', 'ModuleController@materispecial')->name('materi-special');

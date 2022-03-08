@@ -252,7 +252,7 @@
                         </div>
                     </li>
                     <li class="nav-item" id="linkSpesial">
-                        <a class="nav-link" href="{{ url('/chatify') }}">
+                        <a class="nav-link" href="{{ url('/chatify') }}" target="_blank">
                             <i class="ti-id-badge menu-icon"></i>
                             <span class="menu-title">Pendampingan</span>
                         </a>

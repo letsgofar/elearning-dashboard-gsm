@@ -116,7 +116,7 @@ class ModuleController extends Controller
         $attr['grade_id'] = request('grade');
 
         Module::create($attr);
-        return redirect()->to('/')->with('success', 'Modul berhasil dibuat !');;
+        return redirect()->to('/module/create')->with('success', 'Modul berhasil dibuat !');
     }
 
     /**

@@ -13,9 +13,9 @@ $factory->define(School::class, function (Faker $faker) {
         'npsn' => rand(10000000, 90000000),
         'nama' => $faker->sentence(2),
         'slug' => Str::slug($faker->sentence()),
-        'alamat' => $faker->address,
-        'kecamatan' => $faker->kecamatan,
-        'kabupaten' => $faker->city,
-        'provinsi' => $faker->state,
+        'alamat' => $faker->sentence(),
+        'kecamatan' => $faker->sentence(),
+        'kabupaten' => $faker->sentence(),
+        'provinsi' => $faker->sentence(),
     ];
 });

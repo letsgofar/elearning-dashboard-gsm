@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Module;
 use App\Raportschool;
+use App\School;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -28,7 +30,13 @@ class RaportschoolController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return view('dashboard.raport.school.create', ['categories' => $categories]);
+        $schools = School::get();
+        $modules = Module::get();
+        return view('dashboard.raport.school.create', [
+            'categories' => $categories,
+            'schools' => $schools,
+            'modules' => $modules,
+        ]);
     }
 
     /**
